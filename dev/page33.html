@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>畑の気象状況</title>
+  <script type="text/javascript" src="def33.php"></script>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
+			INTERMediator.construct(true);
+		}
+	</script>
+<style>
+span.pictureLink {text-align: right; color:green;}
+</style>
+
+<!--
+<link rel="stylesheet" type="text/css" href="local.css">
+-->
+
+</head>
+<body>
+検索：<input type="text" data-im="_@condition:atmos:date:*match*"/>
+  <button data-im="_@update:atmos">検索</button>
+  レコード数：<select data-im="_@limitnumber:atmos">
+  <option value="5">5</option>
+  <option value="10" selected="selected">10</option>
+  <option value="20">20</option>
+  </select>
+<a href="https://ambidata.io/ch/channel.html?id=999">気象グラフ表示はこちら</a>
+<span class = "pictureLink"><a href="http://mochimugi.sakura.ne.jp/seasonShots/index.html">写真表示はこちら</a></span>
+	<div id="IM_NAVIGATOR"></div>
+    <table>
+        <thead>
+            <tr><th>日付<span style="cursor: pointer" data-im="_@addorder:atmos:date:asc">［昇順］</span>
+                <span style="cursor: pointer" data-im="_@addorder:atmos:date:desc">［降順］</span></th><th>温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>log</th></tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:right">
+              <td data-im="atmos@date"></td>
+              <td data-im="atmos@temp atmos@color_temp@style.color"></td>
+              <td data-im="atmos@pressure"></td>
+              <td data-im="atmos@humid"></td>
+              <td data-im="atmos@lux atmos@color_lux@style.color"></td>
+              <td data-im="atmos@v0"></td>
+              <td data-im="atmos@v1"></td>
+              <td data-im="atmos@memo"></td>
+          </tr>
+        </tbody>
+    </table>
+</body>

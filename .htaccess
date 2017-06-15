@@ -1,0 +1,9 @@
+DirectoryIndex index.html index.htm index.shtml index.php index.cgi
+AuthUserFile /home/mochimugi/www/.htpasswd
+AuthType Basic
+AuthName "Web access"
+Satisfy all
+Order deny,allow
+RewriteEngine on
+RewriteBase /
+RewriteRule ^$ http://mochimugi.sakura.ne.jp/seasonShots/index.html [R=301,L]
