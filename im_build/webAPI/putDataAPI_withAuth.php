@@ -22,7 +22,8 @@ $fValue = $_GET["temp"]; //data "temp" is cpu teperature
 $gValue = $_GET["v0"];
 $hValue = $_GET["v1"];
 $iValue = $_GET["memo"];
-$jValue = $_GET["deploy"];
+$jValue = $_GET["deploy"]; //this is not a data for store database.
+//this is just used for switch deply sisitem and sandBox
  if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
