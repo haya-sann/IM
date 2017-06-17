@@ -6,7 +6,7 @@ if (!isset($_GET["c"])) {
     echo json_encode(array("ERROR" => "No authentication code."));
     exit();
 }
-$authCode = "TsaJt1fR5SyN";//this is the key auth
+$authCode = "TsaJt1fR%5SyN";//this is the key auth
 if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
     echo json_encode(array("ERROR" => "Invalid authentication code."));
     exit();
@@ -21,23 +21,15 @@ $eValue = $_GET["lux"];
 $fValue = $_GET["temp"]; //data "temp" is cpu teperature
 $gValue = $_GET["v0"];
 $hValue = $_GET["v1"];
-$iValue = $_GET["memo"];
-$jValue = $_GET["deploy"]; //this is not a data for store database.
-//this is just used for switch deply sisitem and sandBox
  if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
 }
-if ($jValue == "sandBox") {
-	$tableName = "atmos_test";
-} else { #support regacy 
-	$tableName = "atmos";
-}
 $dbInstance = new DB_Proxy();
 $dbInstance->ignoringPost();
 $dbInstance->initialize(
-    array(array('name' => $tableName, 'key' => 'id',),), 
-    array(), array("db-class" => "PDO"), 2, $tableName);
+    array(array('name' => 'atmos', 'key' => 'id',),), 
+    array(), array("db-class" => "PDO"), 2, "atmos");
 $dbInstance->dbSettings->addValueWithField("date", $aValue);
 $dbInstance->dbSettings->addValueWithField("temp", $bValue);
 $dbInstance->dbSettings->addValueWithField("pressure", $cValue);
@@ -46,10 +38,8 @@ $dbInstance->dbSettings->addValueWithField("lux", $eValue);
 $dbInstance->dbSettings->addValueWithField("cpu", $fValue);
 $dbInstance->dbSettings->addValueWithField("v0", $gValue);
 $dbInstance->dbSettings->addValueWithField("v1", $hValue);
-$dbInstance->dbSettings->addValueWithField("memo", $iValue);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
-//echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
-var_export($logInfo, false);
+echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
 ?>
