@@ -22,15 +22,21 @@ $fValue = $_GET["temp"]; //data "temp" is cpu teperature
 $gValue = $_GET["v0"];
 $hValue = $_GET["v1"];
 $iValue = $_GET["memo"];
+$jValue = $_GET["deploy"];
  if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
 }
+if ($jValue == "sandBox") {
+	$tableName = "atmos_test";
+} else { #support regacy 
+	$tableName = "atmos";
+}
 $dbInstance = new DB_Proxy();
 $dbInstance->ignoringPost();
 $dbInstance->initialize(
-    array(array('name' => 'atmos', 'key' => 'id',),), 
-    array(), array("db-class" => "PDO"), 2, "atmos");
+    array(array('name' => $tableName, 'key' => 'id',),), 
+    array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $aValue);
 $dbInstance->dbSettings->addValueWithField("temp", $bValue);
 $dbInstance->dbSettings->addValueWithField("pressure", $cValue);
@@ -43,6 +49,6 @@ $dbInstance->dbSettings->addValueWithField("memo", $iValue);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
-echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
+//echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
 var_export($logInfo, false);
 ?>
