@@ -24,7 +24,9 @@ $hValue = $_GET["v1"];
 $iValue = $_GET["memo"];
 $jValue = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
-$kValue = $_GET["sensor_temp"]; //this is temperature of light sensor  
+$kValue = $_GET["sensor_temp"]; //this is temperature of light sensor
+$lValue = $_GET["log"]; //this is log file Name
+  
  if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
@@ -49,6 +51,7 @@ $dbInstance->dbSettings->addValueWithField("v0", $gValue);
 $dbInstance->dbSettings->addValueWithField("v1", $hValue);
 $dbInstance->dbSettings->addValueWithField("memo", $iValue);
 $dbInstance->dbSettings->addValueWithField("sensor_temp", $kValue);
+$dbInstance->dbSettings->addValueWithField("log", $lValue);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
