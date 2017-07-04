@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title></title>
+  <script type="text/javascript" src="defSandBox.php"></script>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
+			INTERMediator.construct(true);
+		}
+	</script>
+
+
+</head>
+<body>
+検索：<input type="text" data-im="_@condition:atmos_test@:date:*match*"/>
+  <button data-im="_@update:atmos_test@">検索</button>
+  レコード数：<select data-im="_@limitnumber:atmos_test@">
+  <option value="5">5</option>
+  <option value="10" selected="selected">10</option>
+  <option value="20">20</option>
+  </select>
+<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示はこちら</a>
+<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">写真表示はこちら</a>
+	<div id="IM_NAVIGATOR"></div>
+    <table>
+        <thead>
+            <tr><th>log</th></tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:right">
+				
+          </tr>
+        </tbody>
+    </table>
+</body>
+
