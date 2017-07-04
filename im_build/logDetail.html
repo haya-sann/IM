@@ -5,12 +5,19 @@
   <title></title>
   <script type="text/javascript" src="defSandBox.php"></script>
 
-	<script type="text/javascript">
-		window.onload = function () {
-			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
-			INTERMediator.construct(true);
-		}
-	</script>
+	<script>
+        INTERMediatorOnPage.doBeforeConstruct = function () {
+            INTERMediator.clearCondition("atmos_test");
+            var param = INTERMediatorOnPage.getURLParametersAsArray();
+            if (param["id"]) {
+                INTERMediator.addCondition("atmos_test", {
+                    field: 'id',
+                    operator: '=',
+                    value: param["id"]
+                });
+            }
+        };
+    </script>
 
 
 </head>
@@ -23,7 +30,7 @@
         </thead>
         <tbody>
             <tr style="text-align:right">
-			<iframe width="80%" height="600px" src="../../../seasonShots/daily_timelapseSandbox/mochimugi201707041800.log" >
+			<iframe width="80%" height="90%" src="../../../seasonShots/daily_timelapseSandbox/" + data-im="atmos_test@log" >
 
 			<!--
 			"atmos_test@log@#href atmos_test@log" -->
