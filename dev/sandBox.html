@@ -2,14 +2,8 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>開発機DBの内容表示</title>
+  <title></title>
   <script type="text/javascript" src="defSandBox.php"></script>
-	<!-- BootstrapのCSS読み込み -->
-    <link href="../../bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery読み込み -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- BootstrapのJS読み込み -->
-    <script src="../../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
 		window.onload = function () {
@@ -17,6 +11,42 @@
 			INTERMediator.construct(true);
 		}
 	</script>
+<!-- <style>
+        table   { border-collapse: collapse; }
+        td { border-bottom: 2px solid gray; }
+        th { background-color: #555555; color: green; }
+
+	.IM_NAV_panel {
+	    background-color: #CCCCCC;
+	    padding: 4px;
+	    margin: 4px 0 4px 0;
+	}
+	
+	.IM_NAV_JUMP   {
+	    width: 50px;
+	    text-align: right;
+	}
+	
+	span.IM_NAV_info {
+	    font-size: 9pt;
+	    color: #333333;
+	}
+	
+	span.IM_NAV_button {
+	    padding: 2px 4px 2px 4px;
+	
+	margin: 2px 6px 2px 6px;
+	    border-radius: 3px;
+	    background-color: #000000;
+	    color: yellow;
+	    cursor: pointer;
+	}
+	
+	span.IM_NAV_disabled {
+	    background-color: #666666;
+	    color: #333333;
+	}
+</style>-->
 </head>
 <body>
 検索：<input type="text" data-im="_@condition:atmos_test@:date:*match*"/>
@@ -32,19 +62,22 @@
     <table>
         <thead>
             <tr><th>日付<span style="cursor: pointer" data-im="_@addorder:atmos_test@:date:asc">［昇順］</span>
-                <span style="cursor: pointer" data-im="_@addorder:atmos_test@:date:desc">［降順］</span></th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>写真</th></tr>
+                <span style="cursor: pointer" data-im="_@addorder:atmos_test@:date:desc">［降順］</span></th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>ケース温度</th><th>写真</th><th>log</th></tr>
         </thead>
         <tbody>
             <tr style="text-align:right">
-              <td data-im="atmos_test@date"></td>
-              <td data-im="atmos_test@temp atmos_test@color_temp@style.color"></td>
-			  <td data-im="atmos_test@cpu"></td>
-              <td data-im="atmos_test@pressure"></td>
-              <td data-im="atmos_test@humid"></td>
-              <td data-im="atmos_test@lux atmos_test@color_lux@style.color"></td>
-              <td data-im="atmos_test@v0"></td>
-              <td data-im="atmos_test@v1"></td>
-              <td> <a href="http://mochimugi.sakura.ne.jp/seasonShots/daily_timelapseSandbox/"data-im="atmos_test@memo@#href atmos_test@memo"></a></td>
+				<td data-im="atmos_test@date"></td>
+				<td data-im="atmos_test@temp atmos_test@color_temp@style.color"></td>
+				<td data-im="atmos_test@cpu"></td>
+				<td data-im="atmos_test@pressure"></td>
+				<td data-im="atmos_test@humid"></td>
+				<td data-im="atmos_test@lux atmos_test@color_lux@style.color"></td>
+				<td data-im="atmos_test@v0"></td>
+				<td data-im="atmos_test@v1"></td>
+				<td data-im="atmos_test@sensor_temp"></td>
+				<td> <a href="http://mochimugi.sakura.ne.jp/seasonShots/daily_timelapseSandbox/" data-im="atmos_test@memo@#href atmos_test@memo"></a></td>
+				<td> <a href="http://mochimugi.sakura.ne.jp/seasonShots/daily_timelapseSandbox/" hreflang="ja" data-im="atmos_test@log@#href atmos_test@log"></a></td>
+				<td><a href="logDetail.html?id=" data-im="atmos_test@id@#href">詳細</a></td>
           </tr>
         </tbody>
     </table>
