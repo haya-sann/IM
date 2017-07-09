@@ -5,12 +5,19 @@
   <title></title>
   <script type="text/javascript" src="defSandBox.php"></script>
 
-	<script type="text/javascript">
+<!--私が書いていたスクリプト
+    	<script type="text/javascript">
 		window.onload = function () {
 			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
 			INTERMediator.construct(true);
 		}
-	</script>
+	</script> 
+    以下は新居さんがアドバイスしてくれたもの-->
+    <script type=“text/javascript”>
+        INTERMediatorOnPage.doBeforeConstruct = function() {
+        INTERMediator.navigationLabel = [“最初へ“, null, null, “最後へ“, null, null, null, null, false];
+    };
+    </script>
 </head>
 <body>
 <input type="text" data-im="_@condition:atmos_list:date:*match*"/>
