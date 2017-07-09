@@ -16,15 +16,15 @@
     <script type="text/javascript">
         INTERMediatorOnPage.doBeforeConstruct = function() {
         INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
-        };
+        }
         INTERMediatorOnPage.doAfterConstruct = function () {
         if (!INTERMediator.partialConstructing) {
             var context = IMLibContextPool.contextFromName('atmos_list');
             var keys = Object.keys(context.store);
             var buttonId = context.store[keys[0]]['_im_button_master_id'];
             document.getElementById(buttonId).click();
-        };
-    };
+        }
+    }
     </script>
 </head>
 <body>
