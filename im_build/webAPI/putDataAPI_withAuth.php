@@ -21,10 +21,14 @@ $eValue = $_GET["lux"];
 $fValue = $_GET["temp"]; //data "temp" is cpu teperature
 $gValue = $_GET["v0"];
 $hValue = $_GET["v1"];
-$iValue = $_GET["memo"];
+$iValue = $_GET["photo_url"];
 $jValue = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
- if ($aValue < 1) {
+$kValue = $_GET["remark"];
+$lValue = $_GET["log"];
+
+
+if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
 }
@@ -46,7 +50,9 @@ $dbInstance->dbSettings->addValueWithField("lux", $eValue);
 $dbInstance->dbSettings->addValueWithField("cpu", $fValue);
 $dbInstance->dbSettings->addValueWithField("v0", $gValue);
 $dbInstance->dbSettings->addValueWithField("v1", $hValue);
-$dbInstance->dbSettings->addValueWithField("memo", $iValue);
+$dbInstance->dbSettings->addValueWithField("photo_url", $iValue);
+$dbInstance->dbSettings->addValueWithField("remark", $lValue);
+$dbInstance->dbSettings->addValueWithField("log", $iValue);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
