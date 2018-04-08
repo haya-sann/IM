@@ -27,6 +27,24 @@ $jValue = $_GET["deploy"]; //this is not a data for store database.
 $kValue = $_GET["remark"];
 $lValue = $_GET["log"];
 
+$prevTime = fopen ("prevTime.txt","w+");
+$prevTimeValue = fgets($prevTime);
+$fwrite = fwrite ($prevTime, $aValue);
+if ($fwrite == false){
+    $lValue += ":Error writing prevTime.txt";
+} else {
+    $lValue += (":Writeout normal: " + $prevTimeValue);
+}
+
+$diffTime = diffTime($prevTimeValue,$aValue);
+
+function diffTime($start,$end) {
+    $startSec = strtotime($start);
+    $endSec   = strtotime($end);
+    $diff = $endSec - $startSec;
+    return gmdate('H:i:s',$diff); //Hは24時間制で表示するため
+  }
+
 
 if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
@@ -43,6 +61,7 @@ $dbInstance->initialize(
     array(array('name' => $tableName, 'key' => 'id',),), 
     array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $aValue);
+$dbInstance->dbSettings->addValueWithField("diff_time", $diffTime);
 $dbInstance->dbSettings->addValueWithField("temp", $bValue);
 $dbInstance->dbSettings->addValueWithField("pressure", $cValue);
 $dbInstance->dbSettings->addValueWithField("humid", $dValue);
