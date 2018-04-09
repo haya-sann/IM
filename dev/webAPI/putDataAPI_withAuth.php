@@ -41,6 +41,7 @@ if ($fwrite == false){
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($aValue);
 $diffTime = $datetime1->diff($datetime2);
+$lValue .= $diffTime;
 echo $diffTime->format('%H:%I:%S');
 
 if ($aValue < 1) {
