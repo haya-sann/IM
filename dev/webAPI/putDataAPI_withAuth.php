@@ -40,9 +40,8 @@ if ($fwrite == false){
 
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($aValue);
-$diffTime = $datetime1->diff($datetime2);
-$lValue .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
-echo $diffTime->format('%H:%I:%S');
+$diffTime = $datetime1->diff($datetime2)->format('%H:%I:%S');
+$lValue .= "\n前回アクセスからの経過時間：".$diffTime;
 
 if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
@@ -59,7 +58,7 @@ $dbInstance->initialize(
     array(array('name' => $tableName, 'key' => 'id',),), 
     array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $aValue);
-$dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
+$dbInstance->dbSettings->addValueWithField("diff_time", $diffTime);
 $dbInstance->dbSettings->addValueWithField("temp", $bValue);
 $dbInstance->dbSettings->addValueWithField("pressure", $cValue);
 $dbInstance->dbSettings->addValueWithField("humid", $dValue);
