@@ -19,12 +19,12 @@ $cValue = $_GET["pressure"];
 $dValue = $_GET["humid"];
 $eValue = $_GET["lux"];
 $fValue = $_GET["temp"]; //data "temp" is cpu teperature
-$gValue = $_GET["v0"];
-$hValue = $_GET["v1"];
-$iValue = $_GET["photo_url"];
+//$gValue = $_GET["v0"];
+//$hValue = $_GET["v1"];
+//$iValue = $_GET["photo_url"];
 $jValue = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
-$kValue = $_GET["remark"];
+//$kValue = $_GET["remark"];
 $lValue = $_GET["log"];
 
 $prevTime = fopen ("prevTime.txt","w+");
