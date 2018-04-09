@@ -12,8 +12,8 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
     exit();
 }
 
-$aValue = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
-//$aValue = $_GET["date"];
+$accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
+//$accessTime = $_GET["date"];
 $bValue = $_GET["temperature"];
 $cValue = $_GET["pressure"];
 $dValue = $_GET["humid"];
@@ -30,20 +30,15 @@ $lValue = $_GET["log"];
 
 $prevTime = fopen ("prevTime.txt","w+");
 $prevTimeValue = fgets($prevTime);
-$fwrite = fwrite ($prevTime, $aValue);
-if ($fwrite == false){
-    $lValue .= ":Error writing prevTime.txt";
-} else {
-    $lValue .= ":Writeout normal:  + $prevTimeValue)";
-}
+$fwrite = fwrite ($prevTime, $accessTime);
 
 
 $datetime1 = new DateTime($prevTimeValue);
-$datetime2 = new DateTime($aValue);
+$datetime2 = new DateTime($accessTime);
 $diffTime = $datetime1->diff($datetime2);
 $lValue .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
 
-if ($aValue < 1) {
+if ($accessTime < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
 }
@@ -57,7 +52,7 @@ $dbInstance->ignoringPost();
 $dbInstance->initialize(
     array(array('name' => $tableName, 'key' => 'id',),), 
     array(), array("db-class" => "PDO"), 2, $tableName);
-$dbInstance->dbSettings->addValueWithField("date", $aValue);
+$dbInstance->dbSettings->addValueWithField("date", $accessTime);
 $dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
 $dbInstance->dbSettings->addValueWithField("temp", $bValue);
 $dbInstance->dbSettings->addValueWithField("pressure", $cValue);
