@@ -40,8 +40,8 @@ if ($fwrite == false){
 
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($aValue);
-$diffTime = $datetime1->diff($datetime2)->format('%H:%I:%S');
-$lValue .= "\n前回アクセスからの経過時間：".$diffTime;
+$diffTime = $datetime1->diff($datetime2);
+$lValue .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
 
 if ($aValue < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
