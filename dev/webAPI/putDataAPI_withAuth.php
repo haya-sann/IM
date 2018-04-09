@@ -14,12 +14,16 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
 
 $accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
 //$accessTime = $_GET["date"];
-$bValue = $_GET["temperature"];
-$cValue = $_GET["pressure"];
-$dValue = $_GET["humid"];
+$temp = $_GET["temp"];
+$outer_temp = $_GET["outer_temp"]; //data "temp" is cpu teperature
+$pressure = $_GET["pressure"];
+$outer_pressure = $_GET["outer_pressure"];
+$humid = $_GET["humid"];
+$outer_humid = $_GET["outer_humid"];
 //$eValue = $_GET["lux"];
-$eValue = 13809;
-$fValue = $_GET["temp"]; //data "temp" is cpu teperature
+$lux = 13809;
+$cpu_temp = $_GET["cpu_temp"];
+
 //$gValue = $_GET["v0"];
 //$hValue = $_GET["v1"];
 //$iValue = $_GET["photo_url"];
@@ -54,11 +58,14 @@ $dbInstance->initialize(
     array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $accessTime);
 $dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
-$dbInstance->dbSettings->addValueWithField("temp", $bValue);
-$dbInstance->dbSettings->addValueWithField("pressure", $cValue);
-$dbInstance->dbSettings->addValueWithField("humid", $dValue);
-$dbInstance->dbSettings->addValueWithField("lux", $eValue);
-$dbInstance->dbSettings->addValueWithField("cpu", $fValue);
+$dbInstance->dbSettings->addValueWithField("temp", $temp);
+$dbInstance->dbSettings->addValueWithField("pressure", $pressure);
+$dbInstance->dbSettings->addValueWithField("humid", $humid);
+$dbInstance->dbSettings->addValueWithField("outer_temp", $outer_temp);
+$dbInstance->dbSettings->addValueWithField("outer_pressure", $outer_pressure);
+$dbInstance->dbSettings->addValueWithField("outer_humid", $outer_humid);
+$dbInstance->dbSettings->addValueWithField("lux", $lux);
+$dbInstance->dbSettings->addValueWithField("cpu_temp", $cpu_temp);
 $dbInstance->dbSettings->addValueWithField("v0", $gValue);
 $dbInstance->dbSettings->addValueWithField("v1", $hValue);
 $dbInstance->dbSettings->addValueWithField("photo_url", $iValue);
