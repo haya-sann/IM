@@ -18,6 +18,23 @@
             document.getElementById(buttonId).click();
         }
     }
+    jQuery( function() {
+        jQuery( '#jquery-sample-button' ) (
+            function() {
+                jQuery . ajax( {
+                    url: 'jquery-sample-ajax-php.php',
+                    success: function( data ) {
+                        jQuery( '#jquery-sample-ajax' ) . html( data );
+                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み成功' );
+                    },
+                    error: function( data ) {
+                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み失敗' );
+                    }
+                } );
+            },
+            
+        );
+    } );
     </script>
 </head>
 <body>
@@ -31,11 +48,22 @@
 <a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示♥️</a>
 <a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
 
+
+<div id="jquery-sample">
+    <p>
+        <button id="jquery-sample-button">Git Pull</button>
+        <span id="jquery-sample-textStatus"></span>
+    </p>
+    <div id="jquery-sample-ajax"></div>
+</div>
+
+
 <!--<form name="f1" action="gitPull.php" method="post">
     <input type="submit" name="submit" value="アップデート" />
     </form>
--->
+
 <button style ="position: absolute; right: 0px; top: 0px" type="submit" name="gitPull.php" value="gitPull.php">アップデート</button>
+-->
 	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
         <thead>
