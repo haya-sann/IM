@@ -29,7 +29,13 @@
   <option value="20">20</option>
   </select>
 <a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示〄</a>
-<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a><button style ="position: absolute; right: 0px; top: 0px" type="submit" name="php gitPull.php" value="php gitPull.php">アップデート</button>
+<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
+
+<form name="f1" action="gitPull.php" method="post">
+    <input type="submit" name="submit" value="アップデート" />
+    </form>
+
+<!--<button style ="position: absolute; right: 0px; top: 0px" type="submit" name="php gitPull.php" value="php gitPull.php">アップデート</button>-->
 	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
         <thead>
