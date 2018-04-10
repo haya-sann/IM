@@ -5,14 +5,7 @@
   <title></title>
   <script type="text/javascript" src="defSandBox.php"></script>
 
-<!--私が書いていたスクリプト
-    	<script type="text/javascript">
-		window.onload = function () {
-			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
-			INTERMediator.construct(true);
-		}
-	</script> 
-    以下は新居さんがアドバイスしてくれたもの-->
+<!--    以下は新居さんがアドバイスしてくれたScript-->
     <script type="text/javascript">
         INTERMediatorOnPage.doBeforeConstruct = function() {
         INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
@@ -35,8 +28,8 @@
   <option value="10">10</option>
   <option value="20">20</option>
   </select>
-<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示はこちら</a>
-<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ（写真表示など）はこちら</a><button type="submit" name="example" value="ボタン">アップデート</button>
+<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示</a>
+<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a><button style ="position: absolute; right: 0px; top: 0px" type="submit" name="example" value="ボタン">アップデート</button>
 	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
         <thead>
