@@ -4,24 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title></title>
   <script type="text/javascript" src="defSandBox.php"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <style type="text/css">
 
-    #jquery-sample {
-        margin: 10px;
-        width: 200px;
-    }
-    #jquery-sample-ajax {
-        margin: 10px;
-        padding: 10px;
-        height: 100px;
-        background-color: yellow;
-        border: 1px solid gray;
-        border-radius: 10px;
-    }
-    
-    </style>
- 
 <!--    以下は新居さんがアドバイスしてくれたScript-->
     <script type="text/javascript">
         INTERMediatorOnPage.doBeforeConstruct = function() {
@@ -35,29 +18,7 @@
             document.getElementById(buttonId).click();
         }
     }
-   
-    jQuery(function(){
-
-    jQuery( '#jquery-sample-button' ).toggle (
-            function() {
-                jQuery . ajax( {
-                    url: 'gitPull.php',
-                    success: function( data ) {
-                        jQuery( '#jquery-sample-ajax' ) . html( data );
-                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み成功' );
-                    },
-                    error: function( data ) {
-                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み失敗' );
-                    }
-                } );
-            },
-            function() {
-                jQuery( '#jquery-sample-ajax' ) . html( '' );
-                jQuery( '#jquery-sample-textStatus' ) . text( '' );
-            }
-     ) } );
-
-        </script>
+    </script>
 </head>
 <body>
 <input type="text" data-im="_@condition:atmos_list:date:*match*">
@@ -67,33 +28,14 @@
   <option value="10">10</option>
   <option value="20">20</option>
   </select>
-<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示🍎</a>
-<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
-
-
-<div id="jquery-sample">
-    <p>
-        <button style ="position: absolute; right: 0px; top: 0px" id="jquery-sample-button">Git Pull</button>
-        <span id="jquery-sample-textStatus"></span>
-    </p>
-    <div id="jquery-sample-ajax"></div>
-</div>
-
-
-<!--<form name="f1" action="gitPull.php" method="post">
-    <input type="submit" name="submit" value="アップデート" />
-    </form>
-
-<button style ="position: absolute; right: 0px; top: 0px" type="submit" name="gitPull.php" value="gitPull.php">アップデート</button>
--->
+<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示</a>
+<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a><button style ="position: absolute; right: 0px; top: 0px" type="submit" name="example" value="ボタン">アップデート</button>
 	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
         <thead>
-            <tr><th></th>
-                <th>日付<br>
-                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
-                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-                <th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>外気温</th></tr>
+            <tr><th></th><th>日付<span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
+                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>外気温</th></tr>
+<!--                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>ケース温度</th><th column-width: "20px" >ログ</th></tr>-->
         </thead>
         <tbody>
             <tr style="text-align:right">
@@ -107,8 +49,23 @@
 				<td data-im="atmos_list@v0"></td>
 				<td data-im="atmos_list@v1"></td>
                 <td data-im="atmos_list@outer_temp"></td>
-            </tr>
+                <!--<td style="text-align: left" data-im="atmos_list@log">ああああああaaa bbb</td>ここは左寄せに-->
+          </tr>
         </tbody>
     </table>
+    <!--<table>
+        <thead>
+            <tr>ログ内容[詳細]</tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:right">
+                <td> <iframe width="600" height="900"
+                src="../../seasonShots/daily_timelapseSandbox/" data-im="atmos_detail@log@#src" /></td>
+                -->
+<!--            src="defSandBox.php?media=" data-im="atmos_detail@log@#src" /></td> これを使うとファイルがダウンロードされてしまう-->
+        <!--    </tr>
+        </tbody>
+    </table>
+--> 
 </body>
 
