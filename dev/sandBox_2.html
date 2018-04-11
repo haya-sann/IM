@@ -36,26 +36,27 @@
         }
     }
    
-    jQuery(function(){
-
-    jQuery( '#jquery-sample-button' ).toggle (
-            function() {
-                jQuery . ajax( {
-                    url: 'gitPull.php',
-                    success: function( data ) {
-                        jQuery( '#jquery-sample-ajax' ) . html( data );
-                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み成功' );
-                    },
-                    error: function( data ) {
-                        jQuery( '#jquery-sample-textStatus' ) . text( '読み込み失敗' );
-                    }
-                } );
+    $(function() {
+        var $updateInputs = $("#update-data-form").find("input");
+        
+        $updateInputs.on("click", function() {
+            var $this = $(this); 
+            $.ajax({
+            type: "POST",
+            url: "gitPull.php",
+            data: {
+            id: $this.attr("id")
             },
-            function() {
-                jQuery( '#jquery-sample-ajax' ) . html( '' );
-                jQuery( '#jquery-sample-textStatus' ) . text( '' );
+            success: function() {
+            $this.val("更新完了");
+            },
+            error: function(){
+            $this.val("更新失敗 !!!");
             }
-     ) } );
+            })
+       });
+    });
+    
 
         </script>
 </head>
