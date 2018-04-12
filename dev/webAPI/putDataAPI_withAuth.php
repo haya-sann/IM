@@ -74,6 +74,6 @@ $dbInstance->dbSettings->addValueWithField("log", $lValue);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
-//echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
+echo json_encode(array("data"=>$pInfo,"log"=>$logInfo));
 var_export($logInfo, false);
 ?>
