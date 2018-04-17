@@ -47,8 +47,9 @@
             data: {
             id: $this.attr("id")
             },
-            success: function() {
-            $this.val("更新完了");
+            success: function(html) {
+                $this.val(html);
+//                $this.val("更新完了");
             },
             error: function(){
             $this.val("更新失敗 !!!");
