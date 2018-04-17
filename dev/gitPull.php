@@ -5,6 +5,4 @@ echo "\n# プログラムのアップデータがあれば、更新します\n";
 
 system('cd ~/www/IM/dev/');
 system('git pull 2>&1');
-echo "\n# ＝＝＝＝＝　エラーがあるときには違いがあるか？　＝＝＝＝\n";
-//var_dump(system('git pull 2>&1', $ret));
 ?>
