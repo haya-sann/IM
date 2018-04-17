@@ -5,5 +5,6 @@ echo "\n# プログラムのアップデータがあれば、更新します\n";
 
 system('cd ~/www/IM/dev/');
 system('git pull 2>&1');
+system('git pull');
 //var_dump(system('git pull 2>&1', $ret));
 ?>
