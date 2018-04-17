@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+
+$(function() {
+    var $updateInputs = $("#update-data-form").find("input");
+    $updateInputs.on("click", function() {
+        var $this = $(this);
+        $.ajax({
+            type: "POST",
+            url: "gitPull.php",
+            data: {
+            id: $this.attr("id")
+            },
+            success: function(html) {
+            alert(html);
+            $this.val("更新完了");
+            location.reload();
+            },
+            error: function(){
+            $this.val("更新失敗 !!!");
+            }
+        })
+    });
+});
+</script>
+</head>
+<body>
+
+<form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
+<input type="button" value="プログラム更新" id="gitPull" />
+</form>
+</body>
