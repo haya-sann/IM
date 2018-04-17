@@ -4,5 +4,6 @@ echo "\n# プログラムのアップデータがあれば、更新します\n";
 //var_dump( system('ssh-add ~/.ssh/id_rsa_github', $ret) );
 
 system('cd ~/www/IM/dev/');
-var_dump(system('git pull 2>&1', $ret));
+var_dump(system('git pull 2>&1'));
+//var_dump(system('git pull 2>&1', $ret));
 ?>
