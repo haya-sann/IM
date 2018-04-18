@@ -20,6 +20,7 @@
         }
     }
    
+    //プログラム更新時にgit リポジトリから最新版をインストールするボタンを追加
     $(function() {
         var $updateInputs = $("#update-data-form").find("input");
         
@@ -55,28 +56,10 @@
 <a href="https://ambidata.io/ch/channel.html?id=999">現地気象データ／グラフ表示＼^o^／</a>
 <a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
 
-<!--
-<div id="jquery-sample">
-    <p>
-        <button style ="position: absolute; right: 0px; top: 0px" id="jquery-sample-button">Git Pull</button>
-        <span id="jquery-sample-textStatus"></span>
-    </p>
-    <div id="jquery-sample-ajax"></div>
-</div>
--->
-
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="プログラムアップデート" id="gitPull" />
 </form>
     
-
-
-<!--<form name="f1" action="gitPull.php" method="post">
-    <input type="submit" name="submit" value="アップデート" />
-    </form>
-
-<button style ="position: absolute; right: 0px; top: 0px" type="submit" name="gitPull.php" value="gitPull.php">アップデート</button>
--->
 	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
         <thead>
