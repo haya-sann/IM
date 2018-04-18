@@ -37,8 +37,9 @@
                 $this.val("更新完了");
                 location.reload();
             },
-            error: function(){
-            $this.val("更新失敗 !!!");
+            error: function(html){
+                alert(html);
+                $this.val("更新失敗 !!!");
             }
             })
        });
@@ -53,11 +54,11 @@
   <option value="10">10</option>
   <option value="20">20</option>
   </select>
-<a href="https://ambidata.io/ch/channel.html?id=999">現地気象データ／グラフ表示＼^o^／</a>
+<a href="https://ambidata.io/ch/channel.html?id=999">現地気象データ／グラフ表示</a>
 <a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
-    <input type="button" value="プログラムアップデート" id="gitPull" />
+    <input type="button" value="アップデート" id="gitPull" />
 </form>
     
 	<div id="IM_NAVIGATOR"></div>
@@ -129,5 +130,3 @@
         </tr>
     </table>
 </body>
-
-
