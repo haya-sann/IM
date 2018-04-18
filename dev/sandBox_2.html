@@ -37,8 +37,9 @@
                 $this.val("更新完了");
                 location.reload();
             },
-            error: function(){
-            $this.val("更新失敗 !!!");
+            error: function(html){
+                alert(html);
+                $this.val("更新失敗 !!!");
             }
             })
        });
