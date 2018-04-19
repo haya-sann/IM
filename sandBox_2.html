@@ -25,30 +25,30 @@
         var $updateInputs = $("#update-data-form").find("input");
         
         $updateInputs.on("click", function() {
-            var result = confirm( "表示テスト" );
+            var result = confirm( "サーバー側のプログラムをアップデートしますか？" );
                 if(result){
-                    console.log(" OK が押された");
+                    var $this = $(this); 
+                    $.ajax({
+                    type: "POST",
+                    url: "gitPull.php",
+                    data: {
+                        id: $this.attr("id")
+                    },
+                    success: function(html) {
+                        alert(html);
+                        $this.val("更新完了");
+                        location.reload();
+                    },
+                    error: function(html){
+                        alert(html);
+                        $this.val("更新失敗 !!!");
+                    }
+                    })
+                    
                 }else{
                     console.log(" CANCEL が押された");
                 }
-
-            var $this = $(this); 
-            $.ajax({
-            type: "POST",
-            url: "gitPull.php",
-            data: {
-                id: $this.attr("id")
-            },
-            success: function(html) {
-                alert(html);
-                $this.val("更新完了");
-                location.reload();
-            },
-            error: function(html){
-                alert(html);
-                $this.val("更新失敗 !!!");
-            }
-            })
+            
        });
     });
         </script>
