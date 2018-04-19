@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title></title>
-  <script type="text/javascript" src="defSandBox.php"></script>
+  <script type="text/javascript" src="../defSandBox.php"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   
 <!--    以下は新居さんがアドバイスしてくれたScript-->
@@ -25,23 +25,30 @@
         var $updateInputs = $("#update-data-form").find("input");
         
         $updateInputs.on("click", function() {
-            var $this = $(this); 
-            $.ajax({
-            type: "POST",
-            url: "gitPull.php",
-            data: {
-                id: $this.attr("id")
-            },
-            success: function(html) {
-                alert(html);
-                $this.val("更新完了");
-                location.reload();
-            },
-            error: function(html){
-                alert(html);
-                $this.val("更新失敗 !!!");
-            }
-            })
+            var result = confirm( "サーバー側のプログラムをアップデートしますか？" );
+                if(result){
+                    var $this = $(this); 
+                    $.ajax({
+                    type: "POST",
+                    url: "gitPull.php",
+                    data: {
+                        id: $this.attr("id")
+                    },
+                    success: function(html) {
+                        alert(html);
+                        $this.val("更新完了");
+                        location.reload();
+                    },
+                    error: function(html){
+                        alert(html);
+                        $this.val("更新失敗 !!!");
+                    }
+                    })
+                    
+                }else{
+                    console.log(" CANCEL が押された");
+                }
+            
        });
     });
         </script>
@@ -54,7 +61,7 @@
   <option value="10">10</option>
   <option value="20">20</option>
   </select>
-<a href="https://ambidata.io/ch/channel.html?id=999">現地気象データ／グラフ表示</a>
+<a href="https://ambidata.io/ch/channel.html?id=999">グラフ表示</a>
 <a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ</a>
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
@@ -130,3 +137,4 @@
         </tr>
     </table>
 </body>
+
