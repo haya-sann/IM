@@ -75,66 +75,66 @@
                 <th>日付<br>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-                <th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>外気温</th></tr>
+                <th>温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>外気温</th></tr>
         </thead>
         <tbody>
             <tr style="text-align:right">
                 <td></td><!--詳細ボタン表示用のエリアを用意しておく-->
 				<td data-im="atmos_list@date"></td>
 				<td data-im="atmos_list@temp atmos_list@color_temp@style.color"></td>
-				<td data-im="atmos_list@cpu_temp"></td>
 				<td data-im="atmos_list@pressure"></td>
 				<td data-im="atmos_list@humid"></td>
 				<td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
-				<td data-im="atmos_list@v0"></td>
-				<td data-im="atmos_list@v1"></td>
                 <td data-im="atmos_list@outer_temp"></td>
             </tr>
         </tbody>
     </table>
     <table>
-        <tr><th>id</th>
-            <td data-im="atmos_detail@id"></td>
-        </tr>
-        <tr><th>date</th>
-            <td data-im="atmos_detail@date"></td>
-        </tr>
-        <tr><th>接続間隔</th>
-            <td data-im="atmos_detail@diff_time"></td>
-        </tr>
-    <tr><th>ケース内温度</th>
-            <td data-im="atmos_detail@temp"></td>
-        </tr>
-        <tr><th>気圧</th>
-            <td data-im="atmos_detail@pressure"></td>
-        </tr>
-        <tr><th>湿度</th>
-            <td data-im="atmos_detail@humid"></td>
-        </tr>
-        <tr><th>照度</th>
-            <td data-im="atmos_detail@lux"></td>
-        </tr>
-        <tr><th>CPU温度</th>
-            <td data-im="atmos_detail@cpu_temp"></td>
-        </tr>
-        <tr><th>外気温</th>
-            <td data-im="atmos_detail@outer_temp"></td>
-        </tr>
-        <tr><th>外気圧</th>
-            <td data-im="atmos_detail@outer_pressure"></td>
-        </tr>
-        <tr><th>外湿度</th>
-            <td data-im="atmos_detail@outer_humid"></td>
-        </tr>
-        <tr><th>太陽光発電電圧</th>
-            <td data-im="atmos_detail@v0"></td>
-        </tr>
-        <tr><th>バッテリー電圧</th>
-            <td data-im="atmos_detail@v1"></td>
-        </tr>
-        <tr><th>log</th>
-            <td> <textarea cols=100% rows=20 data-im="atmos_detail@log"></textarea></td>
-        </tr>
+        <td>
+            <tr><th>id</th>
+                <td data-im="atmos_detail@id"></td>
+            </tr>
+            <tr><th>date</th>
+                <td data-im="atmos_detail@date"></td>
+            </tr>
+            <tr><th>接続間隔</th>
+                <td data-im="atmos_detail@diff_time"></td>
+            </tr>
+        <tr><th>ケース内温度</th>
+                <td data-im="atmos_detail@temp"></td>
+            </tr>
+            <tr><th>気圧</th>
+                <td data-im="atmos_detail@pressure"></td>
+            </tr>
+            <tr><th>湿度</th>
+                <td data-im="atmos_detail@humid"></td>
+            </tr>
+            <tr><th>照度</th>
+                <td data-im="atmos_detail@lux"></td>
+            </tr>
+        </td><td>
+            <tr><th>CPU温度</th>
+                <td data-im="atmos_detail@cpu_temp"></td>
+            </tr>
+            <tr><th>外気温</th>
+                <td data-im="atmos_detail@outer_temp"></td>
+            </tr>
+            <tr><th>外気圧</th>
+                <td data-im="atmos_detail@outer_pressure"></td>
+            </tr>
+            <tr><th>外湿度</th>
+                <td data-im="atmos_detail@outer_humid"></td>
+            </tr>
+            <tr><th>太陽光発電電圧</th>
+                <td data-im="atmos_detail@v0"></td>
+            </tr>
+            <tr><th>バッテリー電圧</th>
+                <td data-im="atmos_detail@v1"></td>
+            </tr>
+            <tr><th>log</th>
+                <td> <textarea cols=100% rows=20 data-im="atmos_detail@log"></textarea></td>
+            </tr>
+        </td>
     </table>
 </body>
 
