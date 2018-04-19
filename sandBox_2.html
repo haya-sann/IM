@@ -25,8 +25,8 @@
         var $updateInputs = $("#update-data-form").find("input");
         
         $updateInputs.on("click", function() {
-            var confirm = confirm( "表示テスト" );
-                if(confirm){
+            var result = confirm( "表示テスト" );
+                if(result){
                     console.log(" OK が押された");
                 }else{
                     console.log(" CANCEL が押された");
