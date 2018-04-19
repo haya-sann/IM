@@ -25,13 +25,13 @@
         var $updateInputs = $("#update-data-form").find("input");
         
         $updateInputs.on("click", function() {
-            var result = confirm( "表示テスト" );
-                if(result){
+            var confirm = confirm( "表示テスト" );
+                if(confirm){
                     console.log(" OK が押された");
                 }else{
                     console.log(" CANCEL が押された");
                 }
-                
+
             var $this = $(this); 
             $.ajax({
             type: "POST",
