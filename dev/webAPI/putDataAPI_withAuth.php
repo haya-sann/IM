@@ -20,8 +20,7 @@ $pressure = $_GET["pressure"];
 $outer_pressure = $_GET["outer_pressure"];
 $humid = $_GET["humid"];
 $outer_humid = $_GET["outer_humid"];
-//$eValue = $_GET["lux"];
-$lux = 13809;
+$lux = $_GET["lux"];
 $cpu_temp = $_GET["cpu_temp"];
 
 //$gValue = $_GET["v0"];
