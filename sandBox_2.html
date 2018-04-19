@@ -25,7 +25,13 @@
         var $updateInputs = $("#update-data-form").find("input");
         
         $updateInputs.on("click", function() {
-            alert("hello")
+            var result = confirm( "表示テスト" );
+                if(result){
+                    console.log(" OK が押された");
+                }else{
+                    console.log(" CANCEL が押された");
+                }
+                
             var $this = $(this); 
             $.ajax({
             type: "POST",
