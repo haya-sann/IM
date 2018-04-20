@@ -21,7 +21,7 @@
         }
     }
    
-    //プログラム更新時にgit リポジトリから最新版をインストールするボタンを追加
+    //プログラム更新時にgit リポジトリから最新版をサーバーにgit pull にてアップデートインストールするボタンを追加
     $(function() {
         var $updateInputs = $("#update-data-form").find("input");
         
@@ -69,7 +69,7 @@
     <input type="button" value="アップデート" id="gitPull" />
 </form>
     
-	<div id="IM_NAVIGATOR"></div>
+	<div id="IM_NAVIGATOR">
     <table>
         <thead>
             <tr><th></th>
@@ -91,9 +91,11 @@
         </tbody>
     </table>
 
-
     <table width="100%" style="table-layout: auto;">
-        <!--ここのテーブルレイアウトがどうしてもうまく行かない。要再検討-->
+        <!--
+                <table width="100%" style="table-layout: auto;">
+
+            ここのテーブルレイアウトがどうしてもうまく行かない。要再検討-->
             <tr><th>id</th>
                 <td data-im="atmos_detail@id"></td>
                 <th>CPU温度</th>
@@ -130,11 +132,11 @@
             </tr>            
 
             <tr><th>log</th>
-                <td colspan="2"> <textarea cols ="100%" rows="20" data-im="atmos_detail@log"></textarea></td>
+                <td colspan="2"> <textarea cols="70%" rows="20" data-im="atmos_detail@log"></textarea></td>
 <!--                <td> <textarea cols ="100%" rows="20" data-im="atmos_detail@log"></textarea></td> -->
             </tr>    
     </table>
-
+</div>
 
 
     <br clear="all/">
