@@ -92,46 +92,47 @@
             </tr>
         </tbody>
     </table>
-    <table>
-        <tr><th>id</th>
-            <td data-im="atmos_detail@id"></td>
-        </tr>
-        <tr><th>date</th>
-            <td data-im="atmos_detail@date"></td>
-        </tr>
-        <tr><th>接続間隔</th>
-            <td data-im="atmos_detail@diff_time"></td>
-        </tr>
-        <tr><th>ケース内温度</th>
-            <td data-im="atmos_detail@temp"></td>
-        </tr>
-        <tr><th>気圧</th>
-            <td data-im="atmos_detail@pressure"></td>
-        </tr>
-        <tr><th>湿度</th>
-            <td data-im="atmos_detail@humid"></td>
-        </tr>
-        <tr><th>照度</th>
-            <td data-im="atmos_detail@lux"></td>
-        </tr>
-        <tr><th>CPU温度</th>
-            <td data-im="atmos_detail@cpu_temp"></td>
-        </tr>
-        <tr><th>外気温</th>
-            <td data-im="atmos_detail@outer_temp"></td>
-        </tr>
-        <tr><th>外気圧</th>
-            <td data-im="atmos_detail@outer_pressure"></td>
-        </tr>
-        <tr><th>外湿度</th>
-            <td data-im="atmos_detail@outer_humid"></td>
-        </tr>
-        <tr><th>太陽光発電電圧</th>
-            <td data-im="atmos_detail@v0"></td>
-        </tr>
-        <tr><th>バッテリー電圧</th>
-            <td data-im="atmos_detail@v1"></td>
-        </tr>
+
+    <table width="100%" style="table-layout: auto;">
+        <!--
+                <table width="100%" style="table-layout: auto;">
+
+            ここのテーブルレイアウトがどうしてもうまく行かない。要再検討-->
+            <tr><th>id</th>
+                <td data-im="atmos_detail@id"></td>
+                <th>CPU温度</th>
+                <td data-im="atmos_detail@cpu_temp"></td>
+            </tr>
+            
+            <tr><th>date</th>
+                <td data-im="atmos_detail@date"></td>
+                <th>外気温</th>
+                <td data-im="atmos_detail@outer_temp"></td>
+            </tr>
+            <tr><th>接続間隔</th>
+                <td data-im="atmos_detail@diff_time"></td>
+                <th>外気圧</th>
+                <td data-im="atmos_detail@outer_pressure"></td>
+            </tr>
+            <tr><th>ケース内温度</th>
+                <td data-im="atmos_detail@temp"></td>
+                <th>外湿度</th>
+                <td data-im="atmos_detail@outer_humid"></td>
+            </tr>
+            <tr><th>気圧</th>
+                <td data-im="atmos_detail@pressure"></td>
+                <th>太陽光発電電圧</th>
+                <td data-im="atmos_detail@v0"></td>
+            </tr>
+            <tr><th>湿度</th>
+                <td data-im="atmos_detail@humid"></td>
+                <th>バッテリー電圧</th>
+                <td data-im="atmos_detail@v1"></td>
+            </tr>
+            <tr><th>照度</th>
+                <td data-im="atmos_detail@lux"></td>
+            </tr>            
+
         <tr><th>log</th>
             <td> <textarea cols=100% rows=20 data-im="atmos_detail@log"></textarea></td>
         </tr>
