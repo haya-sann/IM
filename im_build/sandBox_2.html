@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title></title>
+  <script type="text/javascript" src="defSandBox.php"></script>
+
+<!--私が書いていたスクリプト
+    	<script type="text/javascript">
+		window.onload = function () {
+			INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
+			INTERMediator.construct(true);
+		}
+	</script> 
+    以下は新居さんがアドバイスしてくれたもの-->
+    <script type="text/javascript">
+        INTERMediatorOnPage.doBeforeConstruct = function() {
+        INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
+        }
+        INTERMediatorOnPage.doAfterConstruct = function () {
+        if (!INTERMediator.partialConstructing) {
+            var context = IMLibContextPool.contextFromName('atmos_list');
+            var keys = Object.keys(context.store);
+	    var comp = keys[0].split('=');
+            IMLibPageNavigation.moveToDetail(comp[0], comp[1], true, true);
+        }
+    }
+    </script>
+</head>
+<body>
+<input type="text" data-im="_@condition:atmos_list:date:*match*"/>
+  <button data-im="_@update:atmos_list@">検索</button>
+  レコード数：<select data-im="_@limitnumber:atmos_list">
+  <option value="5" selected="selected">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+  </select>
+<a href="https://ambidata.io/ch/channel.html?id=999">現地の気象データ／グラフ表示はこちら</a>
+<a href="http://mochimugi.sakura.ne.jp/seasonShots/index_sandBox.html">ホームページ（写真表示など）はこちら</a>
+	<div id="IM_NAVIGATOR"></div>
+    <table>
+        <thead>
+            <tr><th></th><th>日付<span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
+                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>ケース温度</th><th>写真</th></tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:right">
+                <td></td>
+				<td data-im="atmos_list@date"></td>
+				<td data-im="atmos_list@temp atmos_list@color_temp@style.color"></td>
+				<td data-im="atmos_list@cpu"></td>
+				<td data-im="atmos_list@pressure"></td>
+				<td data-im="atmos_list@humid"></td>
+				<td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
+				<td data-im="atmos_list@v0"></td>
+				<td data-im="atmos_list@v1"></td>
+				<td data-im="atmos_list@sensor_temp"></td>
+				<td> <a href="defSandBox.php?media=" data-im="atmos_list@photourl@href atmos_list@memo"></a></td>
+          </tr>
+        </tbody>
+    </table>
+    <!--<table>
+        <thead>
+            <tr>ログ内容[詳細]</tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:right">
+                <td> <iframe width="600" height="900"
+                src="../../seasonShots/daily_timelapseSandbox/" data-im="atmos_detail@log@#src" /></td>
+                -->
+<!--            src="defSandBox.php?media=" data-im="atmos_detail@log@#src" /></td> これを使うとファイルがダウンロードされてしまう-->
+        <!--    </tr>
+        </tbody>
+    </table>
+--> 
+</body>
+
