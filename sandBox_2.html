@@ -6,8 +6,8 @@
   <script type="text/javascript" src="/IM/defSandBox.php"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   
-<!--    以下は新居さんがアドバイスしてくれたScript-->
-    <script type="text/javascript">
+<!--    以下は新居さんのアドバイス（2018/04/21）-->
+	<script type="text/javascript">
         INTERMediatorOnPage.doBeforeConstruct = function() {
         INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
         }
@@ -15,10 +15,11 @@
         if (!INTERMediator.partialConstructing) {
             var context = IMLibContextPool.contextFromName('atmos_list');
             var keys = Object.keys(context.store);
-            var buttonId = context.store[keys[0]]['_im_button_master_id'];
-            //document.getElementById(buttonId).click();//これはそもそも不要？
+	    var comp = keys[0].split('=');
+            IMLibPageNavigation.moveToDetail(comp[0], comp[1], true, true);
         }
     }
+    </script>
    
     //プログラム更新時にgit リポジトリから最新版をインストールするボタンを追加
     $(function() {
