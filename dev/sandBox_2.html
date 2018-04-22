@@ -13,13 +13,14 @@
         INTERMediator.navigationLabel = ["最初へ", null, null, "最後へ", null, null, null, null, false];
         }
         INTERMediatorOnPage.doAfterConstruct = function () {
-        if (!INTERMediator.partialConstructing) {
-            var context = IMLibContextPool.contextFromName('atmos_list');
-            var keys = Object.keys(context.store);
-            var buttonId = context.store[keys[0]]['_im_button_master_id'];
-            document.getElementById(buttonId).click();
+            if (!INTERMediator.partialConstructing) {
+                var context = IMLibContextPool.contextFromName('atmos_list');
+                var keys = Object.keys(context.store);
+                var comp = keys[0].split('=');
+                var f = IMLibPageNavigation.moveToDetail(comp[0], comp[1], true, true);
+                f();
+            }
         }
-    }
    
     //プログラム更新時にgit リポジトリから最新版をサーバーにgit pull にてアップデートインストールするボタンを追加
     $(function() {
