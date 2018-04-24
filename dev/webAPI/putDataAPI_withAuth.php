@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Tokyo');//タイムゾーンはTokyoにします
 require_once(dirname(__FILE__) . '/../INTER-Mediator/INTER-Mediator.php');
 spl_autoload_register('loadClass');
 
@@ -33,8 +34,9 @@ $lValue = $_GET["log"]; //get log data sended from IoT device
 
 $prevTime = fopen ("prevTime.txt","r+");
 $prevTimeValue = fgets($prevTime);
-$fwrite = fwrite ($prevTime, $accessTime);
-
+rewind($prevTime);
+fwrite ($prevTime, $accessTime);
+fclose($prevTime);
 
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($accessTime);
