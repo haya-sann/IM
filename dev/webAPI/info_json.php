@@ -1,7 +1,7 @@
 <?PHP
-$_BODY,
-'error' => 'invalid json'
-];
+$_BODY{
+'error' => 'invalid json';
+
 }
 $_SERVER['_BODY'] = $_BODY;
 }
