@@ -1,12 +1,13 @@
 <?php
 $accessTime = date("Y-m-d H:i:s");     
+print "現在時刻：".$accessTime;
+
+
 $prevTime = fopen ("prevTime.txt","w+");
 $prevTimeValue = fgets($prevTime);
 $fwrite = fwrite ($prevTime, $accessTime);
 
-$prevTimeValue = "2018-04-24 13:17:14.904665";
-print $prevTimeValue;
-$accessTime = "2018-04-24 13:30:39.805943";
+print "\n前回アクセス時刻：".$prevTimeValue;
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($accessTime);
 $diffTime = $datetime1->diff($datetime2);
