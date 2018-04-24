@@ -29,7 +29,7 @@ $cpu_temp = $_GET["cpu_temp"];
 $jValue = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
 //$kValue = $_GET["remark"];
-$lValue = $_GET["log"];
+$lValue = $_GET["log"]; //get log data sended from IoT device
 
 $prevTime = fopen ("prevTime.txt","w+");
 $prevTimeValue = fgets($prevTime);
