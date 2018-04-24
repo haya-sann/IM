@@ -31,7 +31,7 @@ $jValue = $_GET["deploy"]; //this is not a data for store database.
 //$kValue = $_GET["remark"];
 $lValue = $_GET["log"]; //get log data sended from IoT device
 
-$prevTime = fopen ("prevTime.txt","w+");
+$prevTime = fopen ("prevTime.txt","r+");
 $prevTimeValue = fgets($prevTime);
 $fwrite = fwrite ($prevTime, $accessTime);
 
