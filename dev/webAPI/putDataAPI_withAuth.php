@@ -39,6 +39,7 @@ $fwrite = fwrite ($prevTime, $accessTime);
 $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($accessTime);
 $diffTime = $datetime1->diff($datetime2);
+$lValue .= "\n今回のアクセス時刻：".$accessTime;
 $lValue .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
 
 if ($accessTime < 1) {
