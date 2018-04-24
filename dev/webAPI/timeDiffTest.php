@@ -3,7 +3,7 @@ $accessTime = date("Y-m-d H:i:s");
 print "現在時刻：".$accessTime;
 
 
-$prevTime = fopen ("prevTime.txt","w+");
+$prevTime = fopen ("prevTime.txt","r+");
 $prevTimeValue = fgets($prevTime);
 $fwrite = fwrite ($prevTime, $accessTime);
 
