@@ -14,22 +14,8 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
 }
 
 $accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
-//$accessTime = $_GET["date"];
-$temp = $_GET["temp"];
-$outer_temp = $_GET["outer_temp"];
-$pressure = $_GET["pressure"];
-$outer_pressure = $_GET["outer_pressure"];
-$humid = $_GET["humid"];
-$outer_humid = $_GET["outer_humid"];
-$lux = $_GET["lux"];
-
-//$gValue = $_GET["v0"];
-//$hValue = $_GET["v1"];
-//$iValue = $_GET["photo_url"];
 $jValue = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
-//$kValue = $_GET["remark"];
-$lValue = $_GET["log"]; //get log data sended from IoT device
 
 $prevTime = fopen ("prevTime.txt","r+");
 $prevTimeValue = fgets($prevTime);
@@ -60,23 +46,51 @@ $dbInstance->initialize(
     array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $accessTime);
 $dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
-$dbInstance->dbSettings->addValueWithField("temp", $temp);
-$dbInstance->dbSettings->addValueWithField("pressure", $pressure);
-$dbInstance->dbSettings->addValueWithField("humid", $humid);
-$dbInstance->dbSettings->addValueWithField("outer_temp", $outer_temp);
-$dbInstance->dbSettings->addValueWithField("outer_pressure", $outer_pressure);
-$dbInstance->dbSettings->addValueWithField("outer_humid", $outer_humid);
-$dbInstance->dbSettings->addValueWithField("lux", $lux);
-
+if (isset($_GET["temp"])) {
+    $dbInstance->dbSettings->addValueWithField("temp", $_GET["temp"]);
+   }
+if (isset($_GET["pressure"])) {
+    $dbInstance->dbSettings->addValueWithField("pressure", $_GET["pressure"]);
+   }
+if (isset($_GET["humid"])) {
+    $dbInstance->dbSettings->addValueWithField("humid", $_GET["humid"]);
+   }
+if (isset($_GET["outer_temp"])) {
+    $dbInstance->dbSettings->addValueWithField("outer_temp", $_GET["outer_temp"]);
+   }
+if (isset($_GET["outer_pressure"])) {
+    $dbInstance->dbSettings->addValueWithField("outer_pressure", $_GET["outer_pressure"]);
+   }
+if (isset($_GET["outer_humid"])) {
+    $dbInstance->dbSettings->addValueWithField("outer_humid", $_GET["outer_humid"]);
+   }
+if (isset($_GET["lux"])) {
+    $dbInstance->dbSettings->addValueWithField("lux", $_GET["lux"]);
+   }
+if (isset($_GET["v0"])) {
+    $dbInstance->dbSettings->addValueWithField("v0", $_GET["v0"]);
+   }
+if (isset($_GET["v1"])) {
+    $dbInstance->dbSettings->addValueWithField("v1", $_GET["v1"]);
+   }
+if (isset($_GET["outer_pressure"])) {
+    $dbInstance->dbSettings->addValueWithField("outer_pressure", $_GET["outer_pressure"]);
+   }
 if (isset($_GET["cpu_temp"])) {
-    $dbInstance->dbSettings->addValueWithField("cpu_temp", $cpu_temp);
+    $dbInstance->dbSettings->addValueWithField("cpu_temp", $_GET["cpu_temp"]);
    }
 
-   // $dbInstance->dbSettings->addValueWithField("v0", $gValue);
-// $dbInstance->dbSettings->addValueWithField("v1", $hValue);
-$dbInstance->dbSettings->addValueWithField("photo_url", $iValue);
-$dbInstance->dbSettings->addValueWithField("remark", $kValue);
-$dbInstance->dbSettings->addValueWithField("log", $lValue);
+if (isset($_GET["photo_url"])) {
+    $dbInstance->dbSettings->addValueWithField("photo_url", $_GET["photo_url"]);
+   }
+
+if (isset($_GET["remark"])) {
+    $dbInstance->dbSettings->addValueWithField("remark", $_GET["remark"]);
+   }
+
+if (isset($_GET["log"])) {
+    $dbInstance->dbSettings->addValueWithField("log", $_GET["log"]);
+   }
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
