@@ -14,7 +14,7 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
 }
 
 $accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
-$jValue = $_GET["deploy"]; //this is not a data for store database.
+$switchSandbox = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
 
 $prevTime = fopen ("prevTime.txt","r+");
@@ -27,14 +27,14 @@ $datetime1 = new DateTime($prevTimeValue);
 $datetime2 = new DateTime($accessTime);
 $diffTime = $datetime1->diff($datetime2);
 
-$lValue .= "\n前回のアクセス記録：".$prevTimeValue ."　　今回のアクセス時刻：".$accessTime;
-$lValue .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
+$log .= "\n前回のアクセス記録：".$prevTimeValue ."　　今回のアクセス時刻：".$accessTime;
+$log .= "\n前回アクセスからの経過時間：".$diffTime->format('%H:%I:%S');
 
 if ($accessTime < 1) {
      echo json_encode(array("ERROR" => "Invalid Number."));
      exit();
 }
-if ($jValue == "sandBox") {
+if ($switchSandbox == "sandBox") {
 	$tableName = "atmos_test";
 } else { #support regacy 
 	$tableName = "atmos";
@@ -88,9 +88,7 @@ if (isset($_GET["remark"])) {
     $dbInstance->dbSettings->addValueWithField("remark", $_GET["remark"]);
    }
 
-if (isset($_GET["log"])) {
-    $dbInstance->dbSettings->addValueWithField("log", $_GET["log"]);
-   }
+$dbInstance->dbSettings->addValueWithField("log", $log);
 $dbInstance->processingRequest("create");
 $pInfo = $dbInstance->getDatabaseResult();
 $logInfo = $dbInstance->logger->getMessagesForJS();
