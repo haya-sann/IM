@@ -54,7 +54,7 @@ if (isset($_GET["pressure"])) {
     $dbInstance->dbSettings->addValueWithField("pressure", $_GET["pressure"]);
    }
 $fieldName = "humid";
-if (isset($_GET[str($fieldName)])) {
+if (isset($_GET[$fieldName])) {
     $dbInstance->dbSettings->addValueWithField(str($fieldName), $_GET[str($fieldName)]);
    }
 if (isset($_GET["outer_temp"])) {
