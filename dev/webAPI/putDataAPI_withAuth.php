@@ -47,45 +47,51 @@ $dbInstance->initialize(
     array(), array("db-class" => "PDO"), 2, $tableName);
 $dbInstance->dbSettings->addValueWithField("date", $accessTime);
 $dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
-if (isset($_GET["temp"])) {
-    $dbInstance->dbSettings->addValueWithField("temp", $_GET["temp"]);
-   }
-if (isset($_GET["pressure"])) {
-    $dbInstance->dbSettings->addValueWithField("pressure", $_GET["pressure"]);
-   }
-$fieldName = "humid";
-if (isset($_GET[$fieldName])) {
-    $dbInstance->dbSettings->addValueWithField($fieldName, $_GET[$fieldName]);
-   }
-if (isset($_GET["outer_temp"])) {
-    $dbInstance->dbSettings->addValueWithField("outer_temp", $_GET["outer_temp"]);
-   }
-if (isset($_GET["outer_pressure"])) {
-    $dbInstance->dbSettings->addValueWithField("outer_pressure", $_GET["outer_pressure"]);
-   }
-if (isset($_GET["outer_humid"])) {
-    $dbInstance->dbSettings->addValueWithField("outer_humid", $_GET["outer_humid"]);
-   }
-if (isset($_GET["lux"])) {
-    $dbInstance->dbSettings->addValueWithField("lux", $_GET["lux"]);
-   }
-if (isset($_GET["v0"])) {
-    $dbInstance->dbSettings->addValueWithField("v0", $_GET["v0"]);
-   }
-if (isset($_GET["v1"])) {
-    $dbInstance->dbSettings->addValueWithField("v1", $_GET["v1"]);
-   }
-if (isset($_GET["cpu_temp"])) {
-    $dbInstance->dbSettings->addValueWithField("cpu_temp", $_GET["cpu_temp"]);
-   }
 
-if (isset($_GET["photo_url"])) {
-    $dbInstance->dbSettings->addValueWithField("photo_url", $_GET["photo_url"]);
-   }
+$fieldName = array("temp","cpu_temp","pressure","humid","outer_temp","outer_pressure","outer_humid","lux","v0","v1","photo_url","remark");
 
-if (isset($_GET["remark"])) {
-    $dbInstance->dbSettings->addValueWithField("remark", $_GET["remark"]);
-   }
+foreach($fieldName as $field){
+    if (isset($_GET[$field])) {
+        $dbInstance->dbSettings->addValueWithField($field, $_GET[$field]);
+       }
+}
+
+// if (isset($_GET["pressure"])) {
+//     $dbInstance->dbSettings->addValueWithField("pressure", $_GET["pressure"]);
+//    }
+// $fieldName = "humid";
+// if (isset($_GET[$fieldName])) {
+//     $dbInstance->dbSettings->addValueWithField($fieldName, $_GET[$fieldName]);
+//    }
+// if (isset($_GET["outer_temp"])) {
+//     $dbInstance->dbSettings->addValueWithField("outer_temp", $_GET["outer_temp"]);
+//    }
+// if (isset($_GET["outer_pressure"])) {
+//     $dbInstance->dbSettings->addValueWithField("outer_pressure", $_GET["outer_pressure"]);
+//    }
+// if (isset($_GET["outer_humid"])) {
+//     $dbInstance->dbSettings->addValueWithField("outer_humid", $_GET["outer_humid"]);
+//    }
+// if (isset($_GET["lux"])) {
+//     $dbInstance->dbSettings->addValueWithField("lux", $_GET["lux"]);
+//    }
+// if (isset($_GET["v0"])) {
+//     $dbInstance->dbSettings->addValueWithField("v0", $_GET["v0"]);
+//    }
+// if (isset($_GET["v1"])) {
+//     $dbInstance->dbSettings->addValueWithField("v1", $_GET["v1"]);
+//    }
+// if (isset($_GET["cpu_temp"])) {
+//     $dbInstance->dbSettings->addValueWithField("cpu_temp", $_GET["cpu_temp"]);
+//    }
+
+// if (isset($_GET["photo_url"])) {
+//     $dbInstance->dbSettings->addValueWithField("photo_url", $_GET["photo_url"]);
+//    }
+
+// if (isset($_GET["remark"])) {
+//     $dbInstance->dbSettings->addValueWithField("remark", $_GET["remark"]);
+//    }
 
 $dbInstance->dbSettings->addValueWithField("log", $log);
 $dbInstance->processingRequest("create");
