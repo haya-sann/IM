@@ -16,13 +16,12 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
 $accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
 //$accessTime = $_GET["date"];
 $temp = $_GET["temp"];
-$outer_temp = $_GET["outer_temp"]; //data "temp" is cpu teperature
+$outer_temp = $_GET["outer_temp"];
 $pressure = $_GET["pressure"];
 $outer_pressure = $_GET["outer_pressure"];
 $humid = $_GET["humid"];
 $outer_humid = $_GET["outer_humid"];
 $lux = $_GET["lux"];
-$cpu_temp = $_GET["cpu_temp"];
 
 //$gValue = $_GET["v0"];
 //$hValue = $_GET["v1"];
@@ -68,8 +67,12 @@ $dbInstance->dbSettings->addValueWithField("outer_temp", $outer_temp);
 $dbInstance->dbSettings->addValueWithField("outer_pressure", $outer_pressure);
 $dbInstance->dbSettings->addValueWithField("outer_humid", $outer_humid);
 $dbInstance->dbSettings->addValueWithField("lux", $lux);
-$dbInstance->dbSettings->addValueWithField("cpu_temp", $cpu_temp);
-// $dbInstance->dbSettings->addValueWithField("v0", $gValue);
+
+if (isset($_GET["cpu_temp"])) {
+    $dbInstance->dbSettings->addValueWithField("cpu_temp", $cpu_temp);
+   }
+
+   // $dbInstance->dbSettings->addValueWithField("v0", $gValue);
 // $dbInstance->dbSettings->addValueWithField("v1", $hValue);
 $dbInstance->dbSettings->addValueWithField("photo_url", $iValue);
 $dbInstance->dbSettings->addValueWithField("remark", $kValue);
