@@ -74,9 +74,6 @@ if (isset($_GET["v0"])) {
 if (isset($_GET["v1"])) {
     $dbInstance->dbSettings->addValueWithField("v1", $_GET["v1"]);
    }
-if (isset($_GET["outer_pressure"])) {
-    $dbInstance->dbSettings->addValueWithField("outer_pressure", $_GET["outer_pressure"]);
-   }
 if (isset($_GET["cpu_temp"])) {
     $dbInstance->dbSettings->addValueWithField("cpu_temp", $_GET["cpu_temp"]);
    }
