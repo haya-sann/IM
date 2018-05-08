@@ -21,7 +21,8 @@
         }
     }
 
-   
+    setTimeout("location.reload()",1000*5);
+
     //プログラム更新時にgit リポジトリから最新版をインストールするボタンを追加
     $(function() {
         var $updateInputs = $("#update-data-form").find("input");
@@ -53,7 +54,7 @@
             
        });
     });
-        </script>
+    </script>
 </head>
 <body>
 <input type="text" data-im="_@condition:atmos_list:date:*match*">
