@@ -13,7 +13,7 @@ if (in_array('Already', $result)) { //正規表現にした
 } else {
     echo "\n下記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
     var_dump ($result);
-    echo "変数\$resultは： $strResult";//この出力が出ない
+    print "変数\$resultは：" + $strResult;//この出力が出ない
     print $response;
 }
 ?>
