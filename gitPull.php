@@ -9,7 +9,6 @@ system('git pull', $response);
 if (preg_match('Already up-to-date.',$response)) { //正規表現にした
     print '調べましたが，新しいアップデータはありません';
 } else {
-    print '以下の通り，更新しました';
-    var_dump($response);//実行結果葉全部出す？
+    print '上記のように，更新しました';//$responseを印刷するのやめた
 }
 ?>
