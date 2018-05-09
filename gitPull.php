@@ -11,7 +11,7 @@ if (preg_match('Already', $strResult)) { //正規表現にした
     echo '\n調べましたが，新しいアップデータはありません';
 } else {
     echo "\n上記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
-    echo "$resultは： $result";
+    echo "\$responseは： $result";
     print $response;
 }
 ?>
