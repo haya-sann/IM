@@ -10,7 +10,7 @@ $result = implode ( $result );
 if (preg_match('Already', $result)) { //正規表現にした
     echo '\n調べましたが，新しいアップデータはありません';
 } else {
-    echo '\n上記のように，更新しました';//$responseを印刷するのやめた
+    echo '\n上記のように，更新しました\n';//$responseを印刷するのやめた
     print ($result);
     print $response;
 }
