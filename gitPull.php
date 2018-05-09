@@ -8,7 +8,7 @@ exec('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移�
 exec('git pull', $result, $response);
 var_dump($result);
 $strResult = implode ( $result );
-if (preg_match('Already', $strResult)) { //正規表現にした
+if (in_array('Already', $result)) { //正規表現にした
     echo '\n調べましたが，新しいアップデータはありません';
 } else {
     echo "\n下記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
