@@ -6,6 +6,7 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 exec('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移動する。
 //system('git pull 2>&1');
 exec('git pull', $result, $response);
+$result = implode ( $result );
 if (preg_match('Already up-to-date.',$result)) { //正規表現にした
     print '調べましたが，新しいアップデータはありません';
 } else {
