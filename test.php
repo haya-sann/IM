@@ -1,4 +1,4 @@
 <?php
-$response = 'create mode Already up-to-date.';
+$response = 'create mode up-to-date.';
 echo (strpos($response,'Already'));
 ?>
