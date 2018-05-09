@@ -8,10 +8,10 @@ exec('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移�
 exec('git pull', $result, $response);
 $result = implode ( $result );
 if (preg_match('Already up-to-date.',$result)) { //正規表現にした
-    print '調べましたが，新しいアップデータはありません';
+    print '\n調べましたが，新しいアップデータはありません';
 } else {
-    print '上記のように，更新しました';//$responseを印刷するのやめた
-    var_dump ($result);
+    print '\n上記のように，更新しました';//$responseを印刷するのやめた
+    echo ($result);
     print $response;
 }
 ?>
