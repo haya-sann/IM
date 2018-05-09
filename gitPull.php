@@ -6,11 +6,11 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 exec('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移動する。
 //system('git pull 2>&1');
 exec('git pull', $result, $response);
-$result = implode ( $result );
-if (preg_match('Already', $result)) { //正規表現にした
+$strResult = implode ( $result );
+if (preg_match('Already', $strResult)) { //正規表現にした
     echo '\n調べましたが，新しいアップデータはありません';
 } else {
-    echo "\n上記のように，更新しました\n";//$responseを印刷するのやめた
+    echo "\n上記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
     print ($result);
     print $response;
 }
