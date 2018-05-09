@@ -11,6 +11,6 @@ if (preg_match('Already up-to-date.',$result)) { //正規表現にした
 } else {
     print '上記のように，更新しました';//$responseを印刷するのやめた
     var_dump ($result);
-//    print $response;
+    print $response;
 }
 ?>
