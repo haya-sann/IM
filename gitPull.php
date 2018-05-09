@@ -9,6 +9,6 @@ system('git pull', $response);
 if (strpos($response,'Already up-to-date') === false) {
     print '調べましたが，新しいアップデータはありません';
 } else {
-    var_dump($response);//実行結果
+    var_dump($response);//実行結果葉全部出す？
 }
 ?>
