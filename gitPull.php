@@ -11,7 +11,8 @@ $strResult = implode ( $result );
 if (preg_match('Already', $strResult)) { //正規表現にした
     echo '\n調べましたが，新しいアップデータはありません';
 } else {
-    echo "\n上記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
+    echo "\n下記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
+    var_dump ($result);
     echo "変数\$resultは： $result";//この出力が出ない
     print $response;
 }
