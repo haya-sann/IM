@@ -11,7 +11,7 @@ if (preg_match('Already up-to-date.',$result)) { //正規表現にした
     print '\n調べましたが，新しいアップデータはありません';
 } else {
     print '\n上記のように，更新しました';//$responseを印刷するのやめた
-    echo ($result);
+    print ($result);
     print $response;
 }
 ?>
