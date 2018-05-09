@@ -6,5 +6,9 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 system('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移動する。
 //system('git pull 2>&1');
 system('git pull', $response);
-var_dump($response);//実行結果
+if (strpos($response,"Already up-to-date")) {
+    print '新しいアップデータはありません';
+} else {
+    var_dump($response);//実行結果
+}
 ?>
