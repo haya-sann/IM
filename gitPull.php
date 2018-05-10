@@ -4,6 +4,7 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 //var_dump( system('ssh-add ~/.ssh/id_rsa_github', $ret) );
 
 exec('cd /IM/');//サイトのWeb rootに置いたIMディレクトリーに移動する。
+exec('ls');
 //system('git pull 2>&1');
 exec('git pull', $result, $response);
 var_dump($result);
