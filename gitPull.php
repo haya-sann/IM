@@ -5,14 +5,14 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 
 //exec('cd ./IM/');//これは不要
 exec('ls');
-//system('git pull 2>&1');//systemを使うと標準出力に出力される
 exec('git pull', $result, $response);
 //$strResult = implode ( $result );
 if (in_array("Already up-to-date.", $result, true)) { //正規表現にした
     echo "\n現在既に最新の状態です";
 } else {
     echo "\n下記のように更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
-    print_r ($result);
+    print ($result);
+#    print_r ($result);
 //    print "変数\$resultは：";
 //    print_r ($strResult);
 //    print_r ($response);
