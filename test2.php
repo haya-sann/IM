@@ -1,5 +1,6 @@
 <?php
 $os = array("Mac", "NT", "Irix", "Linux");
+var_dump($os);
 if (in_array("Irix", $os)) {
     echo "Got Irix";
 }
