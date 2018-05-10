@@ -12,9 +12,9 @@ if (in_array("Already up-to-date.", $result, true)) { //正規表現にした
 } else {
     echo "\n下記のように更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
     echo "<pre>";
-    print ($result); //print
+    print_r ($result); //print
     echo "</pre>";
-    print "これはprintを使った";
+    print "これはprint_rを使った";
 #    print_r ($result);
 //    print "変数\$resultは：";
 //    print_r ($strResult);
