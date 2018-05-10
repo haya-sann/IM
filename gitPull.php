@@ -6,7 +6,6 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 //exec('cd ./IM/');//これは不要
 exec('ls');
 exec('git pull', $result, $response);
-//$strResult = implode ( $result );
 if (in_array("Already up-to-date.", $result, true)) { //正規表現にした
     echo "\n現在既に最新の状態です";
 } else {
