@@ -6,7 +6,7 @@ var_dump($res);
 if (in_array("Irix", $os)) {
     echo "Got Irix";
 }
-if (in_array("mac", $os)) {
-    echo "Got mac";
+if (in_array("Already", $os)) {
+    echo "最新のプログラムです";
 }
 ?>
