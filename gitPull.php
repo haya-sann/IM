@@ -15,7 +15,7 @@ if (in_array("Already up to date.", $result, true)) { //正規表現にした
     echo "\n下記のように，更新しました\n";//改行を出力するには""で囲む必要がある。'はだめ
     var_dump ($result);
     print "変数\$resultは：";
-    print $strResult;//プリントされた
-    print $response;
+    print_r ($strResult);
+    print_r ($response);
 }
 ?>
