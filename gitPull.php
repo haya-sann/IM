@@ -3,7 +3,7 @@ echo "\n# プログラムの新規アップデータを探して、\n新しい�
 //var_dump( system('eval "$(ssh-agent -s)"', $ret) );
 //var_dump( system('ssh-add ~/.ssh/id_rsa_github', $ret) );
 
-//exec('cd ./IM/');//同一ディレクトリの
+//exec('cd ./IM/');//これは不要
 exec('ls');
 //system('git pull 2>&1');
 exec('git pull', $result, $response);
