@@ -14,7 +14,7 @@ if (in_array("Already up-to-date.", $result, true)) { //正規表現にした
     echo "<pre>";
     print_r ($result); //print
     echo "</pre>";
-    print "これはprint_rを使った";
+    print "これはprint_rを使ったもの";
 #    print_r ($result);
 //    print "変数\$resultは：";
 //    print_r ($strResult);
