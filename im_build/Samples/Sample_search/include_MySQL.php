@@ -29,9 +29,13 @@ IM_Entry(
     null,
 	array (
 	  'db-class' => 'PDO',
-	  'dsn' => 'mysql:host=mysql700.db.sakura.ne.jp;dbname=mochimugi_test_db;charset=utf8',
-	  'user' => 'mochimugi',
-	  'password' => 'matsutanaka3',
+	  'dsn' => 'mysql:host=mysql116.phy.lolipop.lan;dbname=LAA0710594-satoyama;charset=utf8',
+//	  'dsn' => 'mysql:host=mysql700.db.sakura.ne.jp;dbname=mochimugi_test_db;charset=utf8',
+	  'user' => 'LAA0710594',
+//	  'user' => 'mochimugi',
+		
+//	  'password' => 'matsutanaka3',
+	  'password' => 'GzM6GnGk',
 	),
     false
 );
