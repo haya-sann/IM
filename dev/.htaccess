@@ -1,7 +1,0 @@
-DirectoryIndex index.html index.htm index.shtml index.php index.cgi .ht
-AuthUserFile /home/mochimugi/www/.htpasswd
-AuthType Basic
-AuthName "Web access"
-Satisfy all
-Order allow,deny
-Allow from 221.115.176.9
