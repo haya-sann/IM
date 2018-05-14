@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Tokyo');//タイムゾーンはTokyoにします
-require_once(dirname(__FILE__) . '../INTER-Mediator/INTER-Mediator.php');
+require_once(dirname(__FILE__) . '/../INTER-Mediator/INTER-Mediator.php');
 //require_once(dirname(__FILE__) . '/../INTER-Mediator/INTER-Mediator.php');
 spl_autoload_register('loadClass');
 
