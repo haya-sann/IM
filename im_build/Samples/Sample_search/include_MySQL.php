@@ -34,8 +34,8 @@ IM_Entry(
 	  'user' => 'LAA0710594',
 //	  'user' => 'mochimugi',
 		
-	  'password' => 'matsutanaka3',
-//	  'password' => 'GzM6GnGk',
+//	  'password' => 'matsutanaka3',
+	  'password' => 'GzM6GnGk',
 	),
     false
 );
