@@ -1,4 +1,4 @@
 DirectoryIndex index.html index.htm index.shtml index.php index.cgi .ht
-Order allow,deny
+Order deny,allow
 Deny from all
 Allow from 221.115.176.9
