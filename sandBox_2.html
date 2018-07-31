@@ -60,25 +60,25 @@
 <input type="text" data-im="_@condition:atmos_list:date:*match*">
   <button data-im="_@update:atmos_list@">検索</button>
   レコード数：<select data-im="_@limitnumber:atmos_list">
-  <option value="5" selected="selected">5</option>
+  <option value="5" selected="selected">10</option>
   <option value="10">10</option>
   <option value="20">20</option>
   </select>
 <a href="https://ambidata.io/ch/channel.html?id=1454">グラフ表示</a>
+<a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a>
 <a href="/seasonShots/index.php">ホームページ</a>
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="アップデート" id="gitPull" />
 </form>
-    
-	<div id="IM_NAVIGATOR"></div>
     <table width=100%>
-        <thead>
+        <div id="IM_NAVIGATOR"></div>
+            <thead>
             <tr><th></th>
                 <th>日付<br>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-		    <th>Period</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>電池 v</th><th>Solar</th><th>外気温</th></tr>
+		    <th>Period</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>外気温</th><th>土壌湿度1</th></tr>
         </thead>
         <tbody>
             <tr style="text-align:right">
@@ -93,6 +93,7 @@
 				<td data-im="atmos_list@v0"></td>
 				<td data-im="atmos_list@v1"></td>
                 <td data-im="atmos_list@outer_temp"></td>
+                <td data-im="atmos_list@soil1"></td>
             </tr>
         </tbody>
     </table>
@@ -134,12 +135,12 @@
                 <td data-im="atmos_detail@v1"></td>
             </tr>
             <tr><th>照度</th>
-                <td data-im="atmos_detail@lux"></td>
+                <td data-im="atmos_detail@lux">（5000以下は曇り）</td>
                 <th>土壌湿度１</th>
                 <td data-im="atmos_detail@soil1"></td>
             </tr>            
             <tr><th>土壌湿度２</th>
-                <td data-im="atmos_detail@soil2"></td>
+                <td data-im="atmos_detail@soil2">（未実装）</td>
                 <th>土壌温度</th>
                 <td data-im="atmos_detail@soil_temp"></td>
             </tr>            
