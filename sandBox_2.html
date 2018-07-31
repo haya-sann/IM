@@ -57,13 +57,6 @@
     </script>
 </head>
 <body>
-<input type="text" data-im="_@condition:atmos_list:date:*match*">
-  <button data-im="_@update:atmos_list@">検索</button>
-  レコード数：<select data-im="_@limitnumber:atmos_list">
-  <option value="5">5</option>
-  <option value="10" selected="selected">10</option>
-  <option value="20">20</option>
-  </select>
 <a href="https://ambidata.io/ch/channel.html?id=1454">グラフ表示</a>
 <a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a>
 <a href="/seasonShots/index.php">ホームページ</a>
@@ -72,7 +65,14 @@
     <input type="button" value="アップデート" id="gitPull" />
 </form>
     <table width=100%>
-        <div id="IM_NAVIGATOR"></div>
+        <div id="IM_NAVIGATOR"><input type="text" data-im="_@condition:atmos_list:date:*match*">
+            <button data-im="_@update:atmos_list@">検索</button>
+            レコード数：<select data-im="_@limitnumber:atmos_list">
+            <option value="5">5</option>
+            <option value="10" selected="selected">10</option>
+            <option value="20">20</option>
+            </select>
+          </div>
             <thead>
             <tr><th></th>
                 <th>日付<br>
