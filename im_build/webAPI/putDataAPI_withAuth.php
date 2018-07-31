@@ -14,7 +14,7 @@ if (isset($_GET["c"]) && $_GET["c"] != $authCode) {
     exit();
 }
 
-$accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//こういう形で変数を取得する必要があるのかどうか、よく分からない。
+$accessTime = mb_eregi_replace("/[^0-9]/", "", $_GET["date"]);//for security reason
 $switchSandbox = $_GET["deploy"]; //this is not a data for store database.
 //this is just used for switch deply sisitem and sandBox
 
