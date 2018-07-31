@@ -6,8 +6,8 @@
             var context = IMLibContextPool.contextFromName('atmos_list');
             var keys = Object.keys(context.store);
 	        var comp = keys[0].split('=');
-            var f = IMLibPageNavigation.moveToDetail(comp[0], comp[1], true, false);
-            f();
+            // var f = IMLibPageNavigation.moveToDetail(comp[0], comp[1], true, false);
+            // f();
         }
     }
 
