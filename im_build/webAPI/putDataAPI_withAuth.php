@@ -49,7 +49,7 @@ $dbInstance->initialize(
 $dbInstance->dbSettings->addValueWithField("date", $accessTime);
 $dbInstance->dbSettings->addValueWithField("diff_time", $diffTime->format('%H:%I:%S'));
 
-$fieldName = array("temp","cpu_temp","pressure","humid","outer_temp","outer_pressure","outer_humid","lux","v0","v1","soil1","soil2","soil_temp", "photo_url","remark");
+$fieldName = array("temp","cpu_temp","pressure","humid","outer_temp","outer_pressure","outer_humid","lux","v0","v1","depth","soil1","soil2","soil_temp", "photo_url","remark");
 
 foreach($fieldName as $field){
     if (isset($_GET[$field])) {
