@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>気象データ-はつかりの里田んぼ</title>
   <script type="text/javascript" src="/IM/defAtmos.php"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-  <!--    以下は新居さんのアドバイス（2018/04/21）-->
+  
+<!--    以下は新居さんのアドバイス（2018/04/21）-->
 
 <script type="text/javascript" src="doBefore.js"></script>
 </head>
@@ -18,11 +18,9 @@
   <option value="10" selected=selected>10</option>
   <option value="20">20</option>
   </select>
-<table style = "background: #aaaaaa; width: 400"> 
-    <td><button type = "button"> <a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button></td>
-    <td><a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></td>
-    <td><a href="/seasonShots/index.php">ホームページ</a> </td>
-</table>
+<a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a>
+<a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a>
+<a href="/seasonShots/index.php">ホームページ</a>
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="アップデート" id="gitPull" />
