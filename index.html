@@ -5,7 +5,10 @@
   <title>気象データ-はつかりの里田んぼ</title>
   <script type="text/javascript" src="/IM/defAtmos.php"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+  <style>{
+      background: #eeeeee;
+  }
+  </style>
 <!--    以下は新居さんのアドバイス（2018/04/21）-->
 
 <script type="text/javascript" src="doBefore.js"></script>
@@ -18,12 +21,13 @@
   <option value="10" selected=selected>10</option>
   <option value="20">20</option>
   </select>
-<style> div {
+div {
     background #eeeeee;
+    width: 600px;
     <a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a>
     <a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a>
     <a href="/seasonShots/index.php">ホームページ</a>    
-}</style>
+}
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="アップデート" id="gitPull" />
