@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title></title>
+  <title>気象データ-はつかりの里田んぼ</title>
   <script type="text/javascript" src="/IM/defAtmos.php"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
-<!--    以下は新居さんのアドバイス（2018/04/21）-->
+
+  <!--    以下は新居さんのアドバイス（2018/04/21）-->
 
 <script type="text/javascript" src="doBefore.js"></script>
 </head>
 <body>
+<table style = "background: #aaaaaa; width: 400"> 
+
+<td>
 <input type="text" data-im="_@condition:atmos_list:date:*match*">
-  <button data-im="_@update:atmos_list@">検索</button>
-  レコード数：<select data-im="_@limitnumber:atmos_list">
+  <button data-im="_@update:atmos_list@">日付検索</button></td>
+ <td> レコード数：<select data-im="_@limitnumber:atmos_list">
   <option value="5">5</option>
   <option value="10" selected=selected>10</option>
   <option value="20">20</option>
-  </select>
-<a href="https://ambidata.io/ch/channel.html?id=999">グラフ表示</a>
-<a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a>
-<a href="/seasonShots/index.php">ホームページ</a>
+</select></td>
+    <td><button type = "button"> <a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button></td>
+    <td><button type = "button"> <a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></button></td>
+    <td><button type = "button"> <a href="/seasonShots/index.php">ホームページ</a></button></td>
+</table>
+
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="アップデート" id="gitPull" />
@@ -33,8 +38,8 @@
                 <th>日付<br>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-		    <th>Period</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>外気温</th><th>土壌湿度1</th></tr>
-        </thead>
+                <th>時間差</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>水深(cm)</th><th>外気温</th><th>土壌湿度1</th><th>土壌温度</th></tr>
+            </thead>
         <tbody>
             <tr style="text-align:right">
                 <td></td><!--詳細ボタン表示用のエリアを用意しておく-->
@@ -47,8 +52,10 @@
 				<td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
 				<td data-im="atmos_list@v0"></td>
 				<td data-im="atmos_list@v1"></td>
+                <td data-im="atmos_list@depth"></td>
                 <td data-im="atmos_list@outer_temp"></td>
                 <td data-im="atmos_list@soil1"></td>
+                <td data-im="atmos_list@soil_temp"></td>
             </tr>
         </tbody>
     </table>
@@ -56,8 +63,7 @@
     <table width="100%" style="table-layout: auto;">
         <!--
                 <table width="100%" style="table-layout: auto;">
-
-            ここのテーブルレイアウトがどうしてもうまく行かない。要再検討-->
+        -->
             <tr><th>id</th>
                 <td data-im="atmos_detail@id"></td>
                 <th>CPU温度</th>
@@ -94,11 +100,11 @@
                 <th>土壌湿度１</th>
                 <td data-im="atmos_detail@soil1"></td>
             </tr>            
-            <tr><th>土壌湿度２</th>
-                <td data-im="atmos_detail@soil2">（未装備）</td>
+            <tr><th>水深</th>
+                <td data-im="atmos_detail@depth"></td>
                 <th>土壌温度</th>
                 <td data-im="atmos_detail@soil_temp"></td>
-            </tr>            
+            </tr>
 
             <!-- <tr><th>log</th>
             <td   colspan="3"> <textarea cols=100 rows=20 data-im="atmos_detail@log"></textarea></td>
