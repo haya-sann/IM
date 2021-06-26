@@ -33,8 +33,8 @@
                 <th>日付<br>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
                 <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-                <th>Period</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>水深(cm)</th><th>外気温</th><th>土壌湿度1</th><th>土壌温度</th></tr>
-            </thead>
+		    <th>Period</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>外気温</th><th>土壌湿度1</th></tr>
+        </thead>
         <tbody>
             <tr style="text-align:right">
                 <td></td><!--詳細ボタン表示用のエリアを用意しておく-->
@@ -47,10 +47,8 @@
 				<td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
 				<td data-im="atmos_list@v0"></td>
 				<td data-im="atmos_list@v1"></td>
-                <td data-im="atmos_list@depth"></td>
                 <td data-im="atmos_list@outer_temp"></td>
                 <td data-im="atmos_list@soil1"></td>
-                <td data-im="atmos_list@soil_temp"></td>
             </tr>
         </tbody>
     </table>
@@ -58,7 +56,8 @@
     <table width="100%" style="table-layout: auto;">
         <!--
                 <table width="100%" style="table-layout: auto;">
-        -->
+
+            ここのテーブルレイアウトがどうしてもうまく行かない。要再検討-->
             <tr><th>id</th>
                 <td data-im="atmos_detail@id"></td>
                 <th>CPU温度</th>
