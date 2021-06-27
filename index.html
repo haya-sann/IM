@@ -11,21 +11,30 @@
 <script type="text/javascript" src="doBefore.js"></script>
 </head>
 <body>
-<!-- <table style = "background: #aaaaaa; width: 400">  -->
-<tr>
-<td>
-<input type="text" data-im="_@condition:atmos_list:date:*match*">
-  <button data-im="_@update:atmos_list@">日付検索</button></td>
- <td> レコード数：<select data-im="_@limitnumber:atmos_list">
-  <option value="5">5</option>
-  <option value="10" selected=selected>10</option>
-  <option value="20">20</option>
-</select></td>
-    <td><button type = "button"> <a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button></td>
-    <td><button type = "button"> <a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></button></td>
-    <td><button type = "button"> <a href="/seasonShots/index.php">ホームページ</a></button></td>
-</tr>
-<!-- </table> -->
+    <table style="background: #aaaaaa; width: 400">
+        <tbody data-im-control="ignore_enc_rep">
+        <tr data-im-control="ignore_enc_rep">
+            <td>
+                <input type="text" data-im="_@condition:atmos_list:date:*match*">
+                <button data-im="_@update:atmos_list@">日付検索</button>
+            </td>
+            <td> レコード数：<select data-im="_@limitnumber:atmos_list">
+                <option value="5">5</option>
+                <option value="10" selected=selected>10</option>
+                <option value="20">20</option>
+            </select></td>
+            <td>
+                <button type="button"><a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button>
+            </td>
+            <td>
+                <button type="button"><a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></button>
+            </td>
+            <td>
+                <button type="button"><a href="/seasonShots/index.php">ホームページ</a></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
