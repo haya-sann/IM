@@ -11,113 +11,114 @@
 <script type="text/javascript" src="doBefore.js"></script>
 </head>
 <body>
-    <table style="background: #aaaaaa; width: 400">
+    <table style="background: #3fd60c; width:100%">
         <tbody data-im-control="ignore_enc_rep">
-        <tr data-im-control="ignore_enc_rep">
-            <td>
-                <input type="text" data-im="_@condition:atmos_list:date:*match*">
-                <button data-im="_@update:atmos_list@">日付検索</button>
-            </td>
-            <td> レコード数：<select data-im="_@limitnumber:atmos_list">
-                <option value="5">5</option>
-                <option value="10" selected=selected>10</option>
-                <option value="20">20</option>
-            </select></td>
-            <td>
-                <button type="button"><a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button>
-            </td>
-            <td>
-                <button type="button"><a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></button>
-            </td>
-            <td>
-                <button type="button"><a href="/seasonShots/index.php">ホームページはこちら</a></button>
-            </td>
-        </tr>
+            <tr data-im-control="ignore_enc_rep">
+                <td>
+                    <button type="button"><a href="/seasonShots/index.php">ホームページはこちら</a></button>
+                </td>
+
+                <td>
+                    <input type="text" data-im="_@condition:atmos_list:date:*match*">
+                    <button data-im="_@update:atmos_list@">日付検索</button>
+                </td>
+                <td> レコード数：<select data-im="_@limitnumber:atmos_list">
+                    <option value="5">5</option>
+                    <option value="10" selected=selected>10</option>
+                    <option value="20">20</option>
+                </select></td>
+                <td>
+                    <button type="button"><a href="https://ambidata.io/bd/board.html?id=26890">グラフ表示</a></button>
+                </td>
+                <td>
+                    <button type="button"><a href="/seasonShots/dailySlideShow_v7.php">スライドショー</a></button>
+                </td>
+            </tr>
         </tbody>
+        <div id="IM_NAVIGATOR"></div>
+        <table style = "width:100%">
+            <thead>
+                <tr><th></th>
+                    <th style = "width:120px">日付<br>
+                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
+                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
+                    <th>時間差</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th style="width:130px">明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>水深(cm)</th><th>外気温</th><th>土壌湿度1</th><th>土壌温度</th></tr>
+                </thead>
+            <tbody>
+                <tr style="text-align:right">
+                    <td></td><!--詳細ボタン表示用のエリアを用意しておく-->
+                    <td data-im="atmos_list@date"></td>
+                    <td data-im="atmos_list@diff_time"></td>
+                    <td data-im="atmos_list@temp atmos_list@color_temp@style.color"></td>
+                    <td data-im="atmos_list@cpu_temp"></td>
+                    <td data-im="atmos_list@pressure"></td>
+                    <td data-im="atmos_list@humid"></td>
+                    <td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
+                    <td data-im="atmos_list@v0"></td>
+                    <td data-im="atmos_list@v1"></td>
+                    <td data-im="atmos_list@depth"></td>
+                    <td data-im="atmos_list@outer_temp"></td>
+                    <td data-im="atmos_list@soil1"></td>
+                    <td data-im="atmos_list@soil_temp"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table width="100%" style="table-layout: auto;">
+            <!--
+                    <table width="100%" style="table-layout: auto;">
+            -->
+                <tr><th>id</th>
+                    <td data-im="atmos_detail@id"></td>
+                    <th>CPU温度</th>
+                    <td data-im="atmos_detail@cpu_temp"></td>
+                </tr>
+                
+                <tr><th>date</th>
+                    <td data-im="atmos_detail@date"></td>
+                    <th>外気温</th>
+                    <td data-im="atmos_detail@outer_temp"></td>
+                </tr>
+                <tr><th>接続間隔</th>
+                    <td data-im="atmos_detail@diff_time"></td>
+                    <th>外気圧</th>
+                    <td data-im="atmos_detail@outer_pressure">（850以下はセンサー異常）</td>
+                </tr>
+                <tr><th>ケース内温度</th>
+                    <td data-im="atmos_detail@temp"></td>
+                    <th>外湿度</th>
+                    <td data-im="atmos_detail@outer_humid"></td>
+                </tr>
+                <tr><th>気圧</th>
+                    <td data-im="atmos_detail@pressure"></td>
+                    <th>太陽光発電電圧</th>
+                    <td data-im="atmos_detail@v0"></td>
+                </tr>
+                <tr><th>湿度</th>
+                    <td data-im="atmos_detail@humid"></td>
+                    <th>バッテリー電圧</th>
+                    <td data-im="atmos_detail@v1"></td>
+                </tr>
+                <tr><th>照度</th>
+                    <td data-im="atmos_detail@lux">（5000以下は曇り）</td>
+                    <th>土壌湿度１</th>
+                    <td data-im="atmos_detail@soil1"></td>
+                </tr>            
+                <tr><th>水深</th>
+                    <td data-im="atmos_detail@depth"></td>
+                    <th>土壌温度</th>
+                    <td data-im="atmos_detail@soil_temp"></td>
+                </tr>
+
+                <!-- <tr><th>log</th>
+                <td   colspan="3"> <textarea cols=100 rows=20 data-im="atmos_detail@log"></textarea></td>
+                </tr> -->
+        </table>
+
     </table>
-
-
+    <br clear="all/">
+    
 <form style ="position: absolute; right: 0px; top: 0px" id="update-data-form">
     <input type="button" value="アップデート" id="gitPull" />
 </form>
-<div id="IM_NAVIGATOR"></div>
-    <table width=100%>
-        <thead>
-            <tr><th></th>
-                <th>日付<br>
-                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［昇順］</span>
-                <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">［降順］</span></th>
-                <th>時間差</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th>明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>水深(cm)</th><th>外気温</th><th>土壌湿度1</th><th>土壌温度</th></tr>
-            </thead>
-        <tbody>
-            <tr style="text-align:right">
-                <td></td><!--詳細ボタン表示用のエリアを用意しておく-->
-				<td data-im="atmos_list@date"></td>
-		    	<td data-im="atmos_list@diff_time"></td>
-				<td data-im="atmos_list@temp atmos_list@color_temp@style.color"></td>
-				<td data-im="atmos_list@cpu_temp"></td>
-				<td data-im="atmos_list@pressure"></td>
-				<td data-im="atmos_list@humid"></td>
-				<td data-im="atmos_list@lux atmos_list@color_lux@style.color"></td>
-				<td data-im="atmos_list@v0"></td>
-				<td data-im="atmos_list@v1"></td>
-                <td data-im="atmos_list@depth"></td>
-                <td data-im="atmos_list@outer_temp"></td>
-                <td data-im="atmos_list@soil1"></td>
-                <td data-im="atmos_list@soil_temp"></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table width="100%" style="table-layout: auto;">
-        <!--
-                <table width="100%" style="table-layout: auto;">
-        -->
-            <tr><th>id</th>
-                <td data-im="atmos_detail@id"></td>
-                <th>CPU温度</th>
-                <td data-im="atmos_detail@cpu_temp"></td>
-            </tr>
-            
-            <tr><th>date</th>
-                <td data-im="atmos_detail@date"></td>
-                <th>外気温</th>
-                <td data-im="atmos_detail@outer_temp"></td>
-            </tr>
-            <tr><th>接続間隔</th>
-                <td data-im="atmos_detail@diff_time"></td>
-                <th>外気圧</th>
-                <td data-im="atmos_detail@outer_pressure">（850以下はセンサー異常）</td>
-            </tr>
-            <tr><th>ケース内温度</th>
-                <td data-im="atmos_detail@temp"></td>
-                <th>外湿度</th>
-                <td data-im="atmos_detail@outer_humid"></td>
-            </tr>
-            <tr><th>気圧</th>
-                <td data-im="atmos_detail@pressure"></td>
-                <th>太陽光発電電圧</th>
-                <td data-im="atmos_detail@v0"></td>
-            </tr>
-            <tr><th>湿度</th>
-                <td data-im="atmos_detail@humid"></td>
-                <th>バッテリー電圧</th>
-                <td data-im="atmos_detail@v1"></td>
-            </tr>
-            <tr><th>照度</th>
-                <td data-im="atmos_detail@lux">（5000以下は曇り）</td>
-                <th>土壌湿度１</th>
-                <td data-im="atmos_detail@soil1"></td>
-            </tr>            
-            <tr><th>水深</th>
-                <td data-im="atmos_detail@depth"></td>
-                <th>土壌温度</th>
-                <td data-im="atmos_detail@soil_temp"></td>
-            </tr>
-
-            <!-- <tr><th>log</th>
-            <td   colspan="3"> <textarea cols=100 rows=20 data-im="atmos_detail@log"></textarea></td>
-            </tr> -->
-    </table>
-    <br clear="all/">
 </body>
