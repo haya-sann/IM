@@ -17,10 +17,13 @@
                 <td style="width: 130px;">
                     <button type="button"><a href="/seasonShots/index.php">ホームページ</a></button>
                 </td>
-
                 <td style="width: 220px" >
                     <input type="text" style="width: 100px" data-im="_@condition:atmos_list:date:*match*">
                     <button data-im="_@update:atmos_list@">日付検索</button>
+                </td>
+                
+                <td>
+                <button onClick="window.location.reload();">更新</button>
                 </td>
                 <td style="width: 140px; color: black;"> レコード数：<select data-im="_@limitnumber:atmos_list">
                     <option value="5">5</option>
@@ -40,8 +43,8 @@
             <thead>
                 <tr><th></th>
                     <th style = "width:120px">日付<br>
-                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">［↑-</span>
-                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">↓］</span></th>
+                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:asc">↑</span>
+                    <span style="cursor: pointer" data-im="_@addorder:atmos_list@:date:desc">↓</span></th>
                     <th>時間差</th><th>温度（℃）</th><th>CPU温度（℃）</th><th>気圧（hPa）</th><th>湿度（%）</th><th style="width:130px">明るさ lux<br>（5000以下は曇り）</th><th>Solar</th><th>電池 v</th><th>水深(cm)</th><th>外気温</th><th>土壌湿度1</th><th>土壌温度</th></tr>
                 </thead>
             <tbody>
