@@ -11,5 +11,5 @@ fclose($myfile);
 echo "前回アクセス時刻：" . $prevAccessTime . "\n";
 $time_Now = date("h:i:sa");
 $TimeRug = date_diff($prevAccessTime, $time_Now);
-echo "前回アクセスからの時間差： " . date("h:i:sa", $TimeRug) . "\n";
+echo "前回アクセスからの時間差： " . $TimeRug . "\n";
 ?>
