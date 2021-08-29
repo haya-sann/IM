@@ -4,6 +4,12 @@ echo "Today is " . date("Y.m.d") . "\n";
 echo "Today is " . date("Y-m-d") . "\n";
 echo "Today is " . date("l") . "\n";
 echo "The time is " . date("h:i:sa") . "\n";
-$d=strtotime("2021-08-29 17:00:02.722604");
-echo "前回アクセスの時間： " . date("Y-m-d h:i:sa", $d);
+#ファイルから前回アクセス時刻を読み取る
+$myfile = fopen("prevTime.txt", "r") or die("Unable to open file!");
+$prevAccessTime =  fgets($myfile);
+fclose($myfile);
+
+$TimeRug = strtotime(date("h:i:sa") - $prevAccessTime );
+
+echo "前回アクセスからの時間差： " . date("Y-m-d h:i:sa", $TimeRug) . "\n";
 ?>
