@@ -12,5 +12,5 @@ echo "前回アクセス時刻：" . $prevAccessTime . "\n";
 
 $TimeRug = strtotime(date("Y-m-d h:i:sa") - $prevAccessTime );
 
-echo "前回アクセスからの時間差： " . date("Y-m-d h:i:sa", $TimeRug) . "\n";
+echo "前回アクセスからの時間差： " . date("h:i:sa", $TimeRug) . "\n";
 ?>
