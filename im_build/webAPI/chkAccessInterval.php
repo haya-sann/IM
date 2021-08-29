@@ -9,8 +9,7 @@ $myfile = fopen("prevTime.txt", "r") or die("Unable to open file!");
 $prevAccessTime =  fgets($myfile);
 fclose($myfile);
 echo "前回アクセス時刻：" . $prevAccessTime . "\n";
-
-$TimeRug = strtotime(date("Y-m-d h:i:sa") - $prevAccessTime );
-
+$time_Now = date("h:i:sa");
+$TimeRug = date_diff($prevAccessTime, $time_Now);
 echo "前回アクセスからの時間差： " . date("h:i:sa", $TimeRug) . "\n";
 ?>
