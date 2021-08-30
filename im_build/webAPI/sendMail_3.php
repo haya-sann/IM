@@ -17,7 +17,7 @@ if(!$is_success) {
     echo "失敗";
     die('メール送信失敗');
 }
- 
+echo "終わったよ"; 
 ?>
  
 <!DOCTYPE html>
