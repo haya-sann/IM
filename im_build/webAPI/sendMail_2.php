@@ -1,4 +1,6 @@
 <?php
+// Mail.php って言うのはどこにあるの？？
+
 require_once("Mail.php");
 $params = array(
   "host" => "smtp.lolipop.jpp",
