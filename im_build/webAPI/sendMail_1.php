@@ -1,6 +1,6 @@
 <?php
 // the message
-$msg = "First line of text\nSecond line of text";
+$msg = "1行目です\nコンニチワ、2行目です";
 
 // use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);
