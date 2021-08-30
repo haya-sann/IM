@@ -1,4 +1,7 @@
 <?php
+//ZendFramework の Zend_Mail クラスを使用して Gmail と ロリポップの SMTP サーバを使ってメールを送信するサンプルを掲載
+//https://hensa40.cutegirl.jp/archives/3230
+//lolipopにZendMailをインストールできないんじゃないか？　やってないけど。
 // メールを送信する
 $mail_from = 'tanbo-camera@kawagoesatoyama.jp';       // 送信元メールアドレス
 $smtp_addr = 'smtp.lolipop.jp';   // SMTP サーバ
