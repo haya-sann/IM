@@ -9,7 +9,7 @@ function alartMail($NoAccessPeriod ){
     //  . "CC: haya@mac.com";
     
     // the message
-    $alartMessage = $NoAccessPeriod . "分間過ぎても報告が上がってきません";
+    $alartMessage = $NoAccessPeriod . "分間過ぎても田んぼカメラから報告が上がってきません\nhttps://console.soracom.io/ にアクセスして確認してください。";
     
     // use wordwrap() if lines are longer than 70 characters
     $msg = wordwrap($alartMessage,70);
