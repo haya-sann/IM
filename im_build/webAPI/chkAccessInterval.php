@@ -16,9 +16,9 @@ $delayedTime = date_diff($previousTime,  $time_Now);
 
 echo "　　前回アクセスからの時間差： " . $delayedTime->format('%H:%i:%s') . "<br>";
 $NoAccessPeriod = ($delayedTime->format("%h"))*60 + $delayedTime->format("%i");
-$timeLimit = 10;
+$timeLimit = 60;
 if ($NoAccessPeriod > $timeLimit ) {
-    echo $timeLimit . "分以上アクセスがありません:". $NoAccessPeriod . "分" ;
+    echo $timeLimit . "分以上アクセスがありません。現在までの経過時間は＝:". $NoAccessPeriod . "分" ;
     alartMail($NoAccessPeriod);    
 }
 ?>
