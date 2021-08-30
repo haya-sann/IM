@@ -4,7 +4,7 @@
 
 function alartMail($NoAccessPeriod ){
     $to = "haya.biz@gmail.com";
-    $subject = "１時間以上アクセスがありません";
+    $subject = "指定時間以内にアクセスがありません";
     $headers = "From: tanbo-camera@kawagoesatoyama.jp" . "\r\n";
     //  . "CC: haya@mac.com";
     
