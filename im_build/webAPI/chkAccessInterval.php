@@ -1,6 +1,7 @@
 <?php
 #https://www.w3schools.com/php/func_date_microtime.asp
 #にライブ解説がある。
+include 'sendMail_1.php';
 date_default_timezone_set("Asia/Tokyo");
 
 #ファイルから前回アクセス時刻を読み取る
@@ -18,6 +19,6 @@ $NoAccessPeriod = ($delayedTime->format("%h"))*60 + $delayedTime->format("%i");
 
 if ($NoAccessPeriod > 60 ) {
     echo "１時間以上アクセスがありません:". $NoAccessPeriod . "分" ;
-    
+    alartMail($NoAccessPeriod);    
 }
 ?>
