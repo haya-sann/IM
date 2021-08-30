@@ -1,5 +1,9 @@
 <?php
- 
+//https://pg-happy.jp/mb-send-mail-rentalserver.html
+//（PHP）mb_send_mailをレンタルサーバーで使ってメール送信する方法
+//lolipopで動く。
+//しかし、文字化け、迷惑メール扱いされる。
+
 const MAILTO = "haya@mac.com";  //宛先メールアドレス
 const SUBJECT = "サンキューメール";
 $content = "レンタルサーバーでのメール送信テストです。\n";

@@ -1,4 +1,12 @@
 <?php
+//https://www.w3schools.com/php/func_mail_mail.asp
+//出解説されていた、すごく簡単な方法。ちゃんと流れる。
+
+$to = "iPhone.Concier@gmail.com";
+$subject = "My subject";
+$headers = "From: tanbo-camera@kawagoesatoyama.jp" . "\r\n";
+//  . "CC: haya@mac.com";
+
 // the message
 $msg = "1行目です\nコンニチワ、2行目です";
 
@@ -6,5 +14,6 @@ $msg = "1行目です\nコンニチワ、2行目です";
 $msg = wordwrap($msg,70);
 
 // send email
-mail("haya@mac.com","HPHでメール送信",$msg);
+mail($to,$subject,$msg,$headers);
+
 ?>
