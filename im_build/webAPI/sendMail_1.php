@@ -8,7 +8,7 @@ $headers = "From: tanbo-camera@kawagoesatoyama.jp" . "\r\n";
 //  . "CC: haya@mac.com";
 
 // the message
-$msg = "1行目です\nコンニチワ、2行目です";
+$msg = "1行目です\nコンニチワ、2行目です\nこれはgmailに送りました";
 
 // use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);
