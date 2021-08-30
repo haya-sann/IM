@@ -14,7 +14,8 @@ HEAD;
 $is_success = mb_send_mail(MAILTO, SUBJECT, $content, $headers);
  
 if(!$is_success) {
-  die('メール送信失敗');
+    echo "失敗";
+    die('メール送信失敗');
 }
  
 ?>
