@@ -16,6 +16,7 @@ function alartMail($NoAccessPeriod ){
     
     // send email
     mail($to,$subject,$alartMessage,$headers);
+    echo "注意喚起のためにメールを送信しておきました";
     
 }
 
