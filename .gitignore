@@ -8,3 +8,4 @@ prevTime.txt
 .htaccess
 .htpasswd
 test*
+.DS_Store
