@@ -15,7 +15,7 @@ try {
    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-   $sql = "SELECT * from atmos limit 20";
+   $sql = "select date, temp, outer_temp, presure from atmos order by id desc limit 20;";
    $stm = $pdo->prepare($sql);
    $stm->execute();
    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
