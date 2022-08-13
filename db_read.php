@@ -6,7 +6,7 @@ $conf = include ('defAtmos.php');
 
 $user = $conf['user'];
 $password = $conf['password'];
-$host = 'db';
+// $host = 'db';
 
 try {
    // MySQLへの接続
@@ -40,19 +40,21 @@ table, th, td {
    <thead>
        <tr>
            <th>ID</th>
-           <th>製品名</th>
-           <th>目的</th>
            <th>日付</th>
+           <th>温度</th>
+           <th>外気温</th>
+           <th>気圧</th>
        </tr>
    </thead>
    <tbody>
        <?php
            foreach ($result as $row){
                print "<tr>";
-               print "<td>".$row['asset_id']."</td>";
-               print "<td>".$row['name']."</td>";
-               print "<td>".$row['category']."</td>";
-               print "<td>".$row['purchase']."</td>";
+               print "<td>".$row['id']."</td>";
+               print "<td>".$row['date']."</td>";
+               print "<td>".$row['temp']."</td>";
+               print "<td>".$row['outer_temp']."</td>";
+               print "<td>".$row['pressure']."</td>";
                print "</tr>";
            }
        ?>
