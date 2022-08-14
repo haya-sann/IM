@@ -8,6 +8,8 @@ $user = $conf['user'];
 $password = $conf['password'];
 // $host = 'db';
 
+print ($user); //Just for test
+
 try {
    // MySQLへの接続
    $dsn = $conf['dsn'];
