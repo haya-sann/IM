@@ -8,7 +8,10 @@ try {
 //対象のテーブルを変数に格納
 $data = "atmos";
 // 対象テーブルを選択しSELECT文を変数tableへ格納
-$table = "SELECT * FROM $data limit 10";
+$table = "CREATE TEMPORARY TABLE average_temp AS select from_days(to_days(date)) 日付, avg(temp) 平均気温 from atmos where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date));";
+// queryを実行し、結果を変数に格納
+$sql = $db->query($table);
+$table = "set @amount_temp=0.0; SELECT 日付, 平均気温, format(@amount_temp:=@amount_temp+ 平均気温, 6) as 登熟温度 FROM average_temp;";
 // queryを実行し、結果を変数に格納
 $sql = $db->query($table);
 // foreach文で繰り返し配列の中身を一行ずつ出力
