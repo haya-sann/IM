@@ -8,12 +8,12 @@ try {
 //対象のテーブルを変数に格納
 $data = "atmos";
 // 対象テーブルを選択しSELECT文を変数tableへ格納
-$table = "SELECT * FROM $data";
+$table = "SELECT * FROM $data limit 10";
 // queryを実行し、結果を変数に格納
 $sql = $db->query($table);
 // foreach文で繰り返し配列の中身を一行ずつ出力
 foreach ($sql as $row) {
 // データベースのフィールド名で出力
-echo $data . "のデータ：" . $row['型番'] . 'は' . $row['在庫数'].'個です'.'<br>';
+echo $data . "のデータ：" . $row['temp'] . 'と' . $row['pressure'].'です'.'<br>';
 }
 ?>
