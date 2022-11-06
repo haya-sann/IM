@@ -15,6 +15,12 @@ $sql = $db->query($table);
 // foreach文で繰り返し配列の中身を一行ずつ出力
 foreach ($sql as $row) {
 // データベースのフィールド名で出力
-echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
+  // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
+  echo '<tr>';
+  echo '<td>' . $row ['日付'], '</td>';
+  echo '<td>' . $row ['平均気温'], '</td>';
+  echo '<td>' . $row ['登熟温度'], '</td>';
+  echo '</tr>';
+  echo "\n";
 }
 ?>
