@@ -6,7 +6,7 @@ try {
   echo 'DB接続エラー！: ' . $e->getMessage();
 }
 //対象のテーブルを変数に格納
-$data = atmos;
+$data = "atmos";
 // 対象テーブルを選択しSELECT文を変数tableへ格納
 $table = "SELECT * FROM $data";
 // queryを実行し、結果を変数に格納
