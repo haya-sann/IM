@@ -1,5 +1,6 @@
+<?php
 try {
-  $db = new PDO('mysql:dbname=LAA0710594-satoyama;host=mysql116.phy.lolipop.lan;charset=utf8','***','***');
+  $db = new PDO('mysql:dbname=LAA0710594-satoyama;host=mysql116.phy.lolipop.lan;charset=utf8','LAA0710594','GzM6GnGk');
   echo "接続OK！" . "n";
 } catch (PDOException $e) {
   echo 'DB接続エラー！: ' . $e->getMessage();
@@ -15,3 +16,4 @@ foreach ($sql as $row) {
 // データベースのフィールド名で出力
 echo $data . "のデータ：" . $row['型番'] . 'は' . $row['在庫数'].'個です'.'<br>';
 }
+?>
