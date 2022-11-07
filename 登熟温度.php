@@ -16,7 +16,7 @@ $stmt->execute();
 echo '<tr>';
 echo '<td>' . '日付', '</td>';
 echo '<td>' . '平均気温', '</td>';
-echo '<td>' . '登熟温度', '</td>';
+// echo '<td>' . '登熟温度', '</td>';
 echo '</tr>';
 echo "\n";
 // foreach文で繰り返し配列の中身を一行ずつ出力
@@ -26,7 +26,7 @@ foreach ($stmt as $row) {
   echo '<tr>';
   echo '<td>' . $row ['日付'], '</td>';
   echo '<td>' . $row ['平均気温'], '</td>';
-  echo '<td>' . $row ['登熟温度'], '</td>';
+  // echo '<td>' . $row ['登熟温度'], '</td>';
   echo '</tr>';
   echo "\n";
 }
