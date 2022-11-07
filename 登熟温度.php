@@ -28,6 +28,6 @@ foreach ($stmt as $row) {
   echo '<td>' . $row ['平均気温'], '</td>';
   // echo '<td>' . $row ['登熟温度'], '</td>';
   echo '</tr>';
-  echo "\n";
+  echo '<br>';
 }
 ?>
