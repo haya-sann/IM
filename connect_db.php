@@ -3,6 +3,7 @@ try{
     $conf = include ('defAtmos.php');
     $DB_DATABASE = 'LAA0710594-satoyama';
     $DB_USERNAME = $conf['user'];
+    print ($DB_USERNAME); //Just for test
     $DB_PASSWORD = $conf['password'];
     $DB_OPTION = 'charset=utf8';
     $PDO_DSN = $conf['dsn'];

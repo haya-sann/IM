@@ -1,6 +1,5 @@
 <?php
 $conf = include ('defAtmos.php');
-
 $user = $conf['user'];
 $password = $conf['password'];
 // $host = 'db';
