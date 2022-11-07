@@ -5,7 +5,7 @@ try {
   $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
-  echo "データベース接続しました！";
+  echo "データベース接続しました！\n";
 } catch (PDOException $e) {
   // 接続できなかったらエラー表示
   echo 'DB接続エラー！: ' . $e->getMessage();
