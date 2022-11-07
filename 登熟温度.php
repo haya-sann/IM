@@ -1,12 +1,7 @@
 <?php
+// MySQLへの接続
+require_once('connect.php');
 
-try {
-      // MySQLへの接続
-      require('connect.php');
-      echo "接続OK！" . "\n";
-} catch (PDOException $e) {
-  echo 'DB接続エラー！: ' . $e->getMessage();
-}
 //対象のテーブルを変数に格納
 $data = "atmos";
 $new_table = "average_temp";
