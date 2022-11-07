@@ -1,17 +1,8 @@
 <?php
-$conf = include ('defAtmos.php');
-$user = $conf['user'];
-$password = $conf['password'];
-// $host = 'db';
-
-print ($user); //Just for test
 
 try {
       // MySQLへの接続
-      $dsn = $conf['dsn'];
-      $pdo = new PDO($dsn, $user, $password);
-      $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      require('connect.php');
       echo "接続OK！" . "\n";
 } catch (PDOException $e) {
   echo 'DB接続エラー！: ' . $e->getMessage();
