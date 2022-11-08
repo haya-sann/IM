@@ -31,7 +31,7 @@ echo '<td>' . '登熟温度', '</td>';
 echo '</tr>';
 
 // foreach文で繰り返し配列の中身を一行ずつ出力
-foreach ($stmt_view3 as $row) {
+foreach ($stmt_view2 as $row) {
 // データベースのフィールド名で出力
   // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr><td>' . $row ['日付'] . '</td>';
