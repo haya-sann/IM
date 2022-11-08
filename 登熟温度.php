@@ -19,8 +19,8 @@ echo $sql_view2 . "<br>";  //just for debug
 echo $sql_view3 . "<br>";  //just for debug
 // queryを実行し、結果を変数に格納
 $stmt_view1 = $pdo->query($sql_view1);
-$stmt_view2 = $pdo->query($sql_view2);
-$stmt_view3 = $pdo->query($sql_view3);
+// $stmt_view2 = $pdo->query($sql_view2);
+// $stmt_view3 = $pdo->query($sql_view3);
 
 // ヘッダー行
 echo '<table>';
