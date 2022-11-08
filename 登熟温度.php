@@ -18,7 +18,7 @@ $stmt = $pdo->query($sql);
 // ヘッダー行
 echo '<table>';
 echo '<tr>';
-echo '<th>' . '日付\t', '</th>';
+echo '<th>' . '日付', '</th>';
 echo '<th>' . '平均気温', '</th>';
 echo '</tr>';
 // echo '<td>' . '登熟温度', '</td>';
@@ -28,9 +28,9 @@ foreach ($stmt as $row) {
 // データベースのフィールド名で出力
   // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr>';
-  echo '<td>' . $row ['日付'] . '\t', '</td>';
-  echo '<td>' . $row ['平均気温'], '</td>';
-  // echo '<td>' . $row ['登熟温度'], '</td>';
+  echo '<td>' . $row ['日付'] . '</td>';
+  echo '<td>' . $row ['平均気温'] . '</td>';
+  // echo '<td>' . $row ['登熟温度']. '</td>';
   echo '</tr>';
   echo '</table>';
 }
