@@ -1,5 +1,6 @@
 <?php
 // データーベースへ接続
+echo phpversion();
 try {
   $pdo = new PDO('mysql:dbname=LAA0710594-satoyama;host=mysql116.phy.lolipop.lan;charset=utf8','LAA0710594','GzM6GnGk');
   $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
