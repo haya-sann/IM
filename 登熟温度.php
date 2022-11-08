@@ -20,10 +20,10 @@ echo "SQL Statement:" . $sql_test . "<br>";  //just for debug
 // queryを実行し、結果を変数に格納
 $stmt_view1 = $pdo->prepare($sql_view3);
 $stmt_view1 -> execute();
-// $stmt_view2 = $pdo->prepare($sql_view2);
-// $stmt_view2 -> execute();
-// $stmt_view3 = $pdo->prepare($sql_view3);
-// $stmt_view3 -> execute();
+$stmt_view2 = $pdo->prepare($sql_view2);
+$stmt_view2 -> execute();
+$stmt_view3 = $pdo->prepare($sql_view3);
+$stmt_view3 -> execute();
 // ヘッダー行
 echo '<table>';
 echo '<tr>';
@@ -33,7 +33,7 @@ echo '<td>' . '登熟温度', '</td>';
 echo '</tr>';
 
 // foreach文で繰り返し配列の中身を一行ずつ出力
-foreach ($stmt_view1 as $row) {
+foreach ($stmt_view3 as $row) {
 // データベースのフィールド名で出力
   // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr><td>' . $row ['日付'] . '</td>';
