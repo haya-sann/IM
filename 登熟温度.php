@@ -18,7 +18,7 @@ echo "SQL Statement:" . $sql_test . "<br>";  //just for debug
 // echo $sql_view2 . "<br>";  //just for debug
 // echo $sql_view3 . "<br>";  //just for debug
 // queryを実行し、結果を変数に格納
-$stmt_view1 = $pdo->prepare($sql_test);
+$stmt_view1 = $pdo->prepare($sql_view3);
 $stmt_view1 -> execute();
 // $stmt_view2 = $pdo->prepare($sql_view2);
 // $stmt_view2 -> execute();
