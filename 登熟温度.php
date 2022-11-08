@@ -10,8 +10,9 @@ $sql_test = "CREATE TEMPORARY TABLE $new_table AS select from_days(to_days(date)
 $sql = "select from_days(to_days(date)) 日付, avg(temp) 平均気温 from $data where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date));";
 echo $sql . "<br>";  //just for debug
 // queryを実行し、結果を変数に格納
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt = $pdo->exec($sql);
+// $stmt = $pdo->prepare($sql);
+// $stmt->execute();
 // ヘッダー行
 echo '<tr>';
 echo '<td>' . '日付', '</td>';
