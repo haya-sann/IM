@@ -16,6 +16,7 @@ $stmt = $pdo->query($sql);
 // $stmt = $pdo->prepare($sql);
 // $stmt->execute();
 // ヘッダー行
+echo '<table>'
 echo '<tr>';
 echo '<td>' . '日付\t', '</td>';
 echo '<td>' . '平均気温', '</td>';
@@ -29,7 +30,7 @@ foreach ($stmt as $row) {
   echo '<td>' . $row ['平均気温'], '</td>';
   // echo '<td>' . $row ['登熟温度'], '</td>';
   echo '</tr>';
-  echo '<br>';
+  echo '</table>'
 }
 ?>
 </main>
