@@ -3,7 +3,7 @@
 <?php
 // MySQLへの接続
 require_once('connect.php');
-
+echo "<br>";
 //対象のテーブルを変数に格納
 $data = "atmos";
 $new_table = "average_temp";
