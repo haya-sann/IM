@@ -22,8 +22,6 @@ $stmt_view1 = $pdo->prepare($sql_1);
 $stmt_view1 -> execute();
 $stmt_view2 = $pdo->prepare($sql_2);
 $stmt_view2 -> execute();
-$stmt_view3 = $pdo->prepare($sql_3);
-$stmt_view3 -> execute();
 // ヘッダー行
 echo '<table>';
 echo '<tr>';
