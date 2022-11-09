@@ -16,9 +16,10 @@ $sql_2 = "set @amount_temp=0.0; CREATE OR REPLACE VIEW amount_temp as SELECT 日
 $sql_test2 = "CREATE OR REPLACE VIEW average_temp AS select from_days(to_days(date)) 日付, avg(temp) 平均気温 from atmos where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date));";
 $sql_test3 = "CREATE OR REPLACE VIEW amount_temp AS select sum(平均気温) as 登熟温度 FROM average_temp; select * from amount_temp;";
 $sql_test = "select date 日付, temp 平均気温, lux 登熟温度 from atmos limit 5;";
-echo "SQL Statement:" . $sql_view1 . "<br>";  //just for debug
-echo $sql_view2 . "<br>";  //just for debug
-echo $sql_view3 . "<br>";  //just for debug
+$sql_view5 = "SELECT 日付, 平均気温, sum(C) as 登熟温度 FROM before_temp GROUP BY 日付;";
+echo "SQL Statement:" . $sql_view5 . "<br>";  //just for debug
+// echo $sql_view2 . "<br>";  //just for debug
+// echo $sql_view3 . "<br>";  //just for debug
 // queryを実行し、結果を変数に格納
 // $stmt_view1 = $pdo->prepare($sql_view1);
 // $stmt_view1 -> execute();
@@ -26,8 +27,8 @@ echo $sql_view3 . "<br>";  //just for debug
 // $stmt_view2 -> execute();
 // $stmt_view3 = $pdo->prepare($sql_view3);
 // $stmt_view3 -> execute();
-$stmt_view4 = $pdo->prepare($sql_view4);
-$stmt_view4 -> execute();
+$stmt_view5 = $pdo->prepare($sql_view5);
+$stmt_view5 -> execute();
 // ヘッダー行
 echo '<table>';
 echo '<tr>';
@@ -36,7 +37,7 @@ echo '<th>' . '平均気温', '</th>';
 echo '<td>' . '登熟温度', '</td>';
 echo '</tr>';
 // foreach文で繰り返し配列の中身を一行ずつ出力
-foreach ($stmt_view4 as $row) {
+foreach ($stmt_view5 as $row) {
 // データベースのフィールド名で出力
   echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr>';
