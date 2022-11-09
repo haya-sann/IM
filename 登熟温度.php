@@ -39,7 +39,7 @@ foreach ($stmt_view3 as $row) {
 // データベースのフィールド名で出力
   // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr>';
-  echo '<td>' . $row. '</td>';
+  echo '<td>' . $row[]. '</td>';
   // echo '<td>' . $row ['日付'] . '</td>';
   // echo '<td>' . $row ['平均気温'] . '</td>';
   // echo '<td>' . $row ['登熟温度']. '</td>';
