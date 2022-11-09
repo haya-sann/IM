@@ -9,6 +9,7 @@ echo "<br>";
 $sql_view1 = "CREATE OR REPLACE VIEW average_temp AS select from_days(to_days(date)) 日付, avg(temp) 平均気温 from atmos where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date));";
 $sql_view2 = "CREATE OR REPLACE VIEW amount_temp AS select sum(平均気温) as 登熟温度 FROM average_temp;";
 $sql_view3 = "select * from amount_temp";
+$sql_view4 = "select sum(平均気温) as 登熟温度 FROM average_temp;";
 // $sql_tempTable = "CREATE TEMPORARY TABLE $new_table AS select from_days(to_days(date)) 日付, avg(temp) 平均気温 from $data where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date)); set @amount_temp=0.0; SELECT 日付, 平均気温, format(@amount_temp := @amount_temp + 平均気温, 6) as 登熟温度 FROM $new_table;";
 $sql_1 = "CREATE TEMPORARY TABLE average_temp AS select from_days(to_days(date)) 日付, avg(temp) 平均気温 from atmos where date between '2022-08-08' and '2022-09-15' group by from_days(to_days(date));";
 $sql_2 = "set @amount_temp=0.0; SELECT 日付, 平均気温, format(@amount_temp := @amount_temp + 平均気温, 6) as 登熟温度 FROM average_temp;";
@@ -24,8 +25,8 @@ echo $sql_view3 . "<br>";  //just for debug
 // $stmt_view2 -> execute();
 // $stmt_view3 = $pdo->prepare($sql_view3);
 // $stmt_view3 -> execute();
-$stmt_view3 = $pdo->prepare("show tables;");
-$stmt_view3 -> execute();
+$stmt_view4 = $pdo->prepare($sql_view4);
+$stmt_view4 -> execute();
 // ヘッダー行
 echo '<table>';
 echo '<tr>';
@@ -33,16 +34,14 @@ echo '<th>' . '日付', '</th>';
 echo '<th>' . '平均気温', '</th>';
 echo '<td>' . '登熟温度', '</td>';
 echo '</tr>';
-
 // foreach文で繰り返し配列の中身を一行ずつ出力
-foreach ($stmt_view3 as $row) {
+foreach ($stmt_view4 as $row) {
 // データベースのフィールド名で出力
-  // echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
+  echo $new_table . "のデータ：" . $row['日付'] . 'と' . $row['登熟温度'].'です'.'<br>';
   echo '<tr>';
-  echo '<td>' . $row[]. '</td>';
-  // echo '<td>' . $row ['日付'] . '</td>';
-  // echo '<td>' . $row ['平均気温'] . '</td>';
-  // echo '<td>' . $row ['登熟温度']. '</td>';
+  echo '<td>' . $row ['日付'] . '</td>';
+  echo '<td>' . $row ['平均気温'] . '</td>';
+  echo '<td>' . $row ['登熟温度']. '</td>';
   echo '</tr>';
 }
 echo '</table>';
