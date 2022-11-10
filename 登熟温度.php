@@ -6,8 +6,7 @@ require_once('connect.php');
 echo "<br>";
 
 // 対象テーブルを選択しSELECT文を変数tableへ格納
-$sql_final = "SELECT 日付, format(平均気温,6) as 平均気温, format(sum(D),6) as 登熟温度 FROM before_temp WHERE 日付 >= 
-'2022-08-08' AND C >= '2022-08-08' GROUP BY 日付;";
+$sql_final = "SELECT 日付, format(平均気温,6) as 平均気温, format(sum(D),6) as 登熟温度 FROM before_temp WHERE 日付 >= '2022-08-08' AND C >= '2022-08-08' GROUP BY 日付;";
 //Web表示
 echo "発行したSQL Statement:<br>" . $sql_final . "<br>";  //just for debug
 $stmt = $pdo->prepare($sql_final);
