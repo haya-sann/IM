@@ -19,7 +19,7 @@ $sql_test = "select date 日付, temp 平均気温, lux 登熟温度 from atmos 
 $sql_view5 = "SELECT from_days(to_days(日付)), 平均気温, sum(C) as 登熟温度 FROM before_temp GROUP BY from_days(to_days(日付))  HAVING from_days(to_days(日付)) >= '2022-08-08' AND from_days(to_days(日付)) < '2022-09-15' ;";
 $sql_final1 = "CREATE OR REPLACE VIEW average_temp AS SELECT from_days(to_days(date)) 日付, avg(temp) 平均気温 FROM atmos GROUP BY from_days(to_days(date));
 CREATE OR REPLACE VIEW before_temp AS SELECT A.日付, A.平均気温, B.日付 C, B.平均気温 D FROM average_temp A, average_temp B WHERE B.日付 <= A.日付;
-SELECT 日付, 平均気温, sum(D) as 登熟温度 FROM before_temp WHERE 日付 >= '2022-08-08' AND C >= '2022-08-08' GROUP BY 日付;"
+SELECT 日付, 平均気温, sum(D) as 登熟温度 FROM before_temp WHERE 日付 >= '2022-08-08' AND C >= '2022-08-08' GROUP BY 日付;";
 echo "SQL Statement:" . $sql_view5 . "<br>";  //just for debug
 // echo $sql_view2 . "<br>";  //just for debug
 // echo $sql_view3 . "<br>";  //just for debug
