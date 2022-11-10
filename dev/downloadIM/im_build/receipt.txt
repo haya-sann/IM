@@ -1,0 +1,13 @@
+=================================================
+ INTER-Mediator Ver.5.7 was successfully Build
+ Check out: /home/mochimugi/www/IM/dev/downloadIM/im_build
+=================================================
+Date: Wed Apr 11 22:46:38 JST 2018
+OS Info: FreeBSD www772.sakura.ne.jp 9.1-RELEASE-p24 FreeBSD 9.1-RELEASE-p24 #0: Thu Feb  5 10:03:29 JST 2015     root@www3304.sakura.ne.jp:/usr/obj/usr/src/sys/SAKURA17  amd64
+Original: /home/mochimugi/www/IM/dev/downloadIM/INTER-Mediator
+Build to: /home/mochimugi/www/IM/dev/downloadIM/im_build/INTER-Mediator
+Your Choice: (2) Core only (the least set to work web applications)
+
+You can deploy the 'INTER-Mediator' folder into your web applications. Enjoy!!
+
+INTER-Mediator Web Site: https://inter-mediator.com/

@@ -1,0 +1,5 @@
+AuthUserFile /home/users/0/ciao.jp-kawagoesatoyama/web/IM/.htpasswd
+AuthGroupFile /dev/null
+AuthName "INTER-Mediator"
+AuthType Basic
+require valid-user
