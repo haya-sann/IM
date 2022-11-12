@@ -1,5 +1,5 @@
 <main>
-  <h2>登熟温度の表示</h2>
+  <h2>登熟温度の表示（今年の実績値。1300度までリスト）</h2>
   <?php
   // MySQLへの接続
   require_once('connect.php');
