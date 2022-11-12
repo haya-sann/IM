@@ -11,7 +11,7 @@
   $stmt = $pdo->prepare($sql_final);
   $stmt->execute();
   // ヘッダー行
-  echo '<table>';
+  echo '<table border="1" style="border-collapse: collapse">';
   echo '<tr>';
   echo '<th>' . '日付', '</th>';
   echo '<th>' . '平均気温', '</th>';
@@ -21,9 +21,9 @@
   foreach ($stmt as $row) {
     // データベースのフィールド名で出力
     echo '<tr>';
-    echo '<td width="120">' . $row['日付'] . '</td>';
-    echo '<td width="120">' . $row['平均気温'] . '</td>';
-    echo '<td width="120">' . $row['登熟温度'] . '</td>';
+    echo '<td width="120" style="padding:0px 20px">' . $row['日付'] . '</td>';
+    echo '<td width="120" style="padding:0px 20px">' . $row['平均気温'] . '</td>';
+    echo '<td width="120" style="padding:0px 20px">' . $row['登熟温度'] . '</td>';
     echo '</tr>';
   }
   echo '</table>';
