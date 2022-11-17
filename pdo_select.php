@@ -14,7 +14,7 @@ $prepare = $pdo->prepare($sql);
 
 // PDO::PARAM_INTは、SQL INTEGER データ型を表します。
 // SQL文の「:id」を「3」に置き換えます。つまりは指定したidから10レコードを取得します。
-$prepare->bindValue(':id', 10000, PDO::PARAM_INT);
+// $prepare->bindValue(':id', 10000, PDO::PARAM_INT);
 
 // プリペアドステートメントを実行する
 $prepare->execute();
