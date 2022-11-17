@@ -5,7 +5,7 @@ require 'connect.php';
 
 // SQL文を準備します。「:id」がプレースホルダーです。
 // $sql = 'SELECT * FROM atmos limit 10';
-$sql = 'SELECT * FROM atmos WHERE id > :id limit 10';
+$sql = 'SELECT date, temp FROM atmos WHERE id > :id limit 10';
 // PDOStatementクラスのインスタンスを生成します。
 $prepare = $pdo->prepare($sql);
 
