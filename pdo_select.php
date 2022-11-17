@@ -7,7 +7,7 @@ require 'connect.php';
 // $sql = 'SELECT * FROM atmos limit 10';
 $sql = 'SELECT * FROM atmos WHERE id < :id';
 // PDOStatementクラスのインスタンスを生成します。
-$prepare = $dbh->prepare($sql);
+$prepare = $pdo->prepare($sql);
 
 // PDO::PARAM_INTは、SQL INTEGER データ型を表します。
 // SQL文の「:id」を「3」に置き換えます。つまりはidが10より小さいレコードを取得します。
