@@ -5,12 +5,12 @@ require 'connect.php';
 
 // SQL文を準備します。「:id」がプレースホルダーです。
 // $sql = 'SELECT * FROM atmos limit 10';
-$sql = 'SELECT * FROM atmos WHERE id between :id and :id+10';
+$sql = 'SELECT * FROM atmos WHERE id > :id and id < :id+10';
 // PDOStatementクラスのインスタンスを生成します。
 $prepare = $pdo->prepare($sql);
 
 // PDO::PARAM_INTは、SQL INTEGER データ型を表します。
-// SQL文の「:id」を「3」に置き換えます。つまりはidが10より小さいレコードを取得します。
+// SQL文の「:id」を「3」に置き換えます。つまりは指定したidから10レコードを取得します。
 $prepare->bindValue(':id', 10000, PDO::PARAM_INT);
 
 // プリペアドステートメントを実行する
