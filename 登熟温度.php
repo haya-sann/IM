@@ -1,5 +1,5 @@
 <main>
-  <h2>登熟温度の表示（2022年）</h2>
+  <h2>登熟温度の表示（今年の出穂日:2023年8月2日）</h2>
   <?php
   // MySQLへの接続
   require_once('connect.php');
@@ -7,7 +7,9 @@
 
   $sql_final = "SELECT 日付, format(平均気温,6) AS 平均気温, format(登熟温度,6) AS 登熟温度 FROM cumulative_temp WHERE 登熟温度 < 1300;";
   //Web表示
-  echo "発行したSQL Statement:<br>" . $sql_final . "<br>";  //just for debug
+  // echo "発行したSQL Statement:<br>" . $sql_final . "<br>";  //just for debug
+  
+  echo "出穂日から今日までの登熟温度";
   $stmt = $pdo->prepare($sql_final);
   $stmt->execute();
   // ヘッダー行
